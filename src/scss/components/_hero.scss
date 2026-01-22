@@ -1,0 +1,14 @@
+.hero-section {
+  position: relative;
+  height: 300px;
+}
+
+.hero-section .carousel-item img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel {
+  width: 70%;
+  margin: auto;
+}

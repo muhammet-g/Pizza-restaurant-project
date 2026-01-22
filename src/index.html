@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap"
+    rel="stylesheet">
+  <title>ركن البيتزا</title>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top py-3 mb-4">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+          <div id="pizza-logo">
+            <img src="assets/images/pizza-logo.png" alt="pizza-logo">
+          </div>
+          <span class="store-title me-3 ms-3 ">ركن البيتزا</span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+          aria-controls="mainNavbar" aria-expanded="false" aria-label="تبديل القائمة">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNavbar">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">الرئيسية</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="pizza.html">أنواع البيتزا</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">عن المطعم</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">اتصل بنا</a>
+            </li>
+          </ul>
+
+          <div class="d-flex ms-lg-4">
+            <a href="cart.html" class="btn btn-outline-danger position-relative">
+              سلة الطلبات
+              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                0
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="hero-section">
+      <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="الشريحة الأولى"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+            aria-label="الشريحة الثانية"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+            aria-label="الشريحة الثالثة"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="assets/images/carousel-1.jpg" class="d-block w-100" alt="بيتزا مشوية بالجبنة والخضار الطازجة">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>بيتزا الجبنة الفاخرة</h5>
+              <p>بيتزا مشوية بالجبنة الموتزاريلا والخضار الطازجة المختارة بعناية. طعم لذيذ لا يُنسى!</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="assets/images/carousel-2.jpg" class="d-block w-100" alt="بيتزا بالسلامي والفلفل الحار">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>بيتزا السلامي اللذيذة</h5>
+              <p>بيتزا حارة مع السلامي الإيطالي والفلفل الملون. نكهة غنية وشهية لعشاق الطعم الحار!</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="assets/images/carousel-3.jpg" class="d-block w-100" alt="بيتزا بالدجاج والبصل والفطر">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>بيتزا الدجاج المشوي</h5>
+              <p>بيتزا شهية مع قطع الدجاج المشوي والفطر والبصل. خيار صحي ولذيذ للعائلة!</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">السابق</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">التالي</span>
+        </button>
+      </div>
+    </div>
+  </header>
+</body>
+
+</html>
