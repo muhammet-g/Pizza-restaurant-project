@@ -1,0 +1,170 @@
+// ============================================================
+// Typography Settings - إعدادات الخطوط والنصوص
+// ============================================================
+
+// الخط الرئيسي للموقع
+$primary-font: 'Zain', sans-serif;
+$secondary-font: 'Arial', sans-serif;
+$font-family-base: $primary-font;
+
+// ============================================================
+// أحجام الخطوط (Font Sizes)
+// ============================================================
+
+// أحجام الخطوط الرئيسية
+$font-size-base: 1rem;
+$font-size-sm: 0.875rem;
+$font-size-xs: 0.75rem;
+$font-size-lg: 1.125rem;
+$font-size-xl: 1.25rem;
+$font-size-2xl: 1.5rem;
+$font-size-3xl: 2rem;
+$font-size-4xl: 2.5rem;
+$font-size-5xl: 3rem;
+
+// أحجام الخطوط للعناوين (Headings)
+$heading-1-size: 3rem;     // 48px
+$heading-2-size: 2.5rem;   // 40px
+$heading-3-size: 2rem;     // 32px
+$heading-4-size: 1.5rem;   // 24px
+$heading-5-size: 1.25rem;  // 20px
+$heading-6-size: 1rem;     // 16px
+
+// أحجام الخطوط للعناصر الخاصة
+$title-size: 2rem;
+$subtitle-size: 1.5rem;
+$body-size: 1rem;
+$small-size: 0.875rem;
+$tiny-size: 0.75rem;
+
+// ============================================================
+// وزن الخطوط (Font Weights)
+// ============================================================
+
+$font-weight-thin: 200;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-extrabold: 800;
+$font-weight-black: 900;
+
+// ============================================================
+// ارتفاع الخط (Line Heights)
+// ============================================================
+
+$line-height-tight: 1.2;
+$line-height-normal: 1.5;
+$line-height-relaxed: 1.75;
+$line-height-loose: 2;
+
+// ============================================================
+// المسافات بين الأحرف (Letter Spacing)
+// ============================================================
+
+$letter-spacing-tight: -0.02em;
+$letter-spacing-normal: 0;
+$letter-spacing-wide: 0.05em;
+
+// ============================================================
+// دالة helper لأحجام الخطوط المتجاوبة
+// ============================================================
+
+@mixin font-size-responsive($mobile, $tablet: null, $desktop: null) {
+  font-size: $mobile;
+
+  @if $tablet != null {
+    @media (min-width: 768px) {
+      font-size: $tablet;
+    }
+  }
+
+  @if $desktop != null {
+    @media (min-width: 1024px) {
+      font-size: $desktop;
+    }
+  }
+}
+
+// ============================================================
+// دالة للعناوين (Headings Mixin)
+// ============================================================
+
+@mixin heading-1 {
+  font-size: $heading-1-size;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-tight;
+  font-family: $primary-font;
+}
+
+@mixin heading-2 {
+  font-size: $heading-2-size;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-tight;
+  font-family: $primary-font;
+}
+
+@mixin heading-3 {
+  font-size: $heading-3-size;
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-normal;
+  font-family: $primary-font;
+}
+
+@mixin heading-4 {
+  font-size: $heading-4-size;
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-normal;
+  font-family: $primary-font;
+}
+
+@mixin heading-5 {
+  font-size: $heading-5-size;
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-normal;
+  font-family: $primary-font;
+}
+
+@mixin heading-6 {
+  font-size: $heading-6-size;
+  font-weight: $font-weight-normal;
+  line-height: $line-height-normal;
+  font-family: $primary-font;
+}
+
+// ============================================================
+// دالة للنصوص الجسدية (Body Text Mixin)
+// ============================================================
+
+@mixin body-text($weight: $font-weight-normal, $size: $body-size) {
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $line-height-normal;
+  font-family: $primary-font;
+}
+
+@mixin small-text($weight: $font-weight-normal) {
+  font-size: $small-size;
+  font-weight: $weight;
+  line-height: $line-height-normal;
+  font-family: $primary-font;
+}
+
+@mixin tiny-text($weight: $font-weight-normal) {
+  font-size: $tiny-size;
+  font-weight: $weight;
+  line-height: $line-height-tight;
+  font-family: $primary-font;
+}
+
+// ============================================================
+// دالة نصية شاملة
+// ============================================================
+
+@mixin text-style($size, $weight: $font-weight-normal, $line-height: $line-height-normal) {
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $line-height;
+  font-family: $primary-font;
+}

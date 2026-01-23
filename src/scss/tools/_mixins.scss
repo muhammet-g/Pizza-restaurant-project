@@ -1,0 +1,71 @@
+// =====================
+// Button Mixins
+// =====================
+@use '../settings/colors' as *;
+
+// mixin زر عام قابل للتخصيص
+@mixin btn($bg-color: $red, $text-color: white, $padding: 12px 35px, $radius: 12px) {
+  background-color: $bg-color !important;
+  color: $text-color !important;
+  padding: $padding;
+  border-radius: $radius;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  white-space: nowrap;
+
+  &:hover {
+    background-color: darken($bg-color, 10%) !important;
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// mixin لأزرار التحكم (الأسهم)
+@mixin control-button {
+  width: 50px;
+  height: 50px;
+  background-color: $red;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.8;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background-color: $amber-gold;
+    opacity: 1;
+  }
+}
+
+// mixin لمؤشرات Carousel
+@mixin carousel-indicators {
+  button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: $red;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: darken($red, 15%);
+    }
+
+    &.active {
+      background-color: $amber-gold;
+    }
+  }
+}

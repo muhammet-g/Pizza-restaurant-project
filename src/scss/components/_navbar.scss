@@ -1,8 +1,9 @@
-@import '../settings/colors';
+@use '../settings/colors' as *;
+@use '../settings/spacing' as *;
 
 .navbar {
     background-color: $pitch-black;
-    padding: 10px 20px;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -20,7 +21,7 @@
         width: 100%;
         height: 100%;
         object-fit: contain;
-        margin-left: 50px;
+        margin-left: $spacing-2xl;
     }
 
 }

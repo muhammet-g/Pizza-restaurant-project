@@ -1,3 +1,13 @@
+@use '../settings/colors' as *;
+@use '../settings/typography' as *;
+
 *{
     font-family: 'Zain', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: $vanilla-custard !important;
 }

@@ -1,14 +1,107 @@
+@use '../settings/colors' as *;
+@use '../settings/typography' as *;
+@use '../settings/spacing' as *;
+
+// Bounce animation keyframes
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
 .hero-section {
+  padding: 0;
+  background-color: $vanilla-custard;
+  width: 100%;
+  height: 100vh;
   position: relative;
-  height: 300px;
+
+  .carousel-wrapper {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .carousel-inner {
+    width: 100%;
+    height: 100%;
+  }
+
+  .carousel-item {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+
+    .carousel-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  }
+
+  .overly {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 234, 174, 0.6);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+
+    .hello {
+      font-size: 4rem;
+      text-align: center;
+      width: 100%;
+      margin: 20px auto !important;
+      font-weight: $font-weight-extrabold;
+      margin-top: 6rem;
+      position: relative;
+
+      &::after {
+        content: '';
+        display: block;
+        width: 65%;
+        height: 4px;
+        background-color: $maroon;
+        margin-top: 5px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -24px;
+      }
+
+      .store-name {
+        color: $maroon;
+      }
+    }
+
+    .discover-us {
+      padding-top: $spacing-3xl;
+      font-size: 2rem;
+      color: $pitch-black;
+      font-weight: $font-weight-bold;
+    }
+
+    .angles-down-custom {
+      font-size: 3rem;
+      color: $maroon;
+      margin-top: 2rem;
+      animation: bounce 2s infinite;
+      font-size: 70px;
+
+  }
 }
 
-.hero-section .carousel-item img {
-  height: 100%;
-  object-fit: cover;
-}
-
-.carousel {
-  width: 70%;
-  margin: auto;
 }

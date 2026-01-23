@@ -9,12 +9,13 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap"
     rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <title>ركن البيتزا</title>
 </head>
 
 <body>
   <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top py-3 mb-4">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top py-1">
       <div class="container">
         <a class="navbar-brand d-flex align-items-center" href="index.html">
           <div id="pizza-logo">
@@ -55,52 +56,169 @@
         </div>
       </div>
     </nav>
-    <div class="hero-section">
-      <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
-            aria-current="true" aria-label="الشريحة الأولى"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-            aria-label="الشريحة الثانية"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-            aria-label="الشريحة الثالثة"></button>
-        </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="assets/images/carousel-1.jpg" class="d-block w-100" alt="بيتزا مشوية بالجبنة والخضار الطازجة">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>بيتزا الجبنة الفاخرة</h5>
-              <p>بيتزا مشوية بالجبنة الموتزاريلا والخضار الطازجة المختارة بعناية. طعم لذيذ لا يُنسى!</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="assets/images/carousel-2.jpg" class="d-block w-100" alt="بيتزا بالسلامي والفلفل الحار">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>بيتزا السلامي اللذيذة</h5>
-              <p>بيتزا حارة مع السلامي الإيطالي والفلفل الملون. نكهة غنية وشهية لعشاق الطعم الحار!</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="assets/images/carousel-3.jpg" class="d-block w-100" alt="بيتزا بالدجاج والبصل والفطر">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>بيتزا الدجاج المشوي</h5>
-              <p>بيتزا شهية مع قطع الدجاج المشوي والفطر والبصل. خيار صحي ولذيذ للعائلة!</p>
-            </div>
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
-          data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">السابق</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
-          data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">التالي</span>
-        </button>
+    <section class="hero-section">
+      <div class="overly">
+        <h1 class="hello">مرحبا بكم في <span class="store-name">ركن البيتزا</span></h1>
+        <h2 class="discover-us text-center mb-5">اكتشف قائمتنا الشهية</h2>
+        <i class="fa-solid fa-angles-down angles-down-custom"></i>
       </div>
-    </div>
+      <div class="carousel-wrapper">
+
+        <div id="pizzaCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000"
+          data-bs-pause="false">
+
+          <div class="carousel-inner">
+            <!-- Slide 1 -->
+            <div class="carousel-item active">
+              <img src="assets/images/carousel-1.jpg" alt="بيتزا الجبنة الفاخرة" class="carousel-img">
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="carousel-item">
+              <img src="assets/images/carousel-2.jpg" alt="بيتزا السلامي الحارة" class="carousel-img">
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="carousel-item">
+              <img src="assets/images/carousel-3.jpg" alt="بيتزا الدجاج المشوي" class="carousel-img">
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="carousel-item">
+              <img src="assets/images/carousel-4.jpg" alt="بيتزا الخضار الصحية" class="carousel-img">
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
   </header>
+  <main>
+    <!-- المحتوى الرئيسي سيذهب هنا -->
+    <section class="menu-section pt-5 pb-5">
+      <div class="container">
+        <div class="row">
+          <!-- عناصر القائمة ستضاف هنا -->
+          <div class="col-12 col-md-5 col-lg-3 card">
+            <div class="tilt">
+              <div class="img"><img src="./assets/images/mg-2.jpg" alt="Premium Laptop"></div>
+            </div>
+            <div class="info">
+              <h2 class="title">بيتزا مارجريت</h2>
+              <p class="desc">بيتزا طازة بصلصة الطماطم الطبيعية، جبن موتزاريلا ممتازة، وأوراق باسيليكو طازة. لذة
+                كلاسيكية بكل لقمة.</p>
+              <div class="bottom">
+                <div class="price">
+                  <span class="new">﷼ 12</span>
+                </div>
+                <button class="btn">
+                  <span>Add to Cart</span>
+                  <i class="fas fa-cart-plus"></i>
+                </button>
+              </div>
+              <div class="meta">
+                <div class="rating">
+                  <span class="rating-value">5.0</span>
+                  <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <span class="rcount">(325 تقييم)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-5 col-lg-3 card">
+            <div class="tilt">
+              <div class="img"><img src="./assets/images/vg-1.jpg" alt="Premium Laptop"></div>
+            </div>
+            <div class="info">
+              <h2 class="title">بيتزا الخضار</h2>
+              <p class="desc">مزيج صحي من الخضار الطازة المشكلة، فلفل ملون، باذنجان، وزيتون أسود. خيار مثالي للصحة
+                والمذاق.</p>
+              <div class="bottom">
+                <div class="price">
+                  <span class="new">﷼ 9</span>
+                </div>
+                <button class="btn">
+                  <span>Add to Cart</span>
+                  <i class="fas fa-cart-plus"></i>
+                </button>
+              </div>
+              <div class="meta">
+                <div class="rating">
+                  <span class="rating-value">4.6</span>
+                  <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                  </div>
+                  <span class="rcount">(298 تقييم)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-5 col-lg-3 card">
+            <div class="tilt">
+              <div class="img">
+                <img src="./assets/images/ch-2.jpg" alt="Premium Laptop">
+              </div>
+            </div>
+            <div class="info">
+              <h2 class="title">بيتزا الدجاج</h2>
+              <p class="desc">دجاج مشوي طري مع صلصة باربيكيو، بصل وفلفل حار. مزيج شهي يجمع بين النكهات الرائعة.</p>
+              <div class="bottom">
+                <div class="price">
+                  <span class="new">﷼ 19</span>
+                </div>
+                <button class="btn">
+                  <span>Add to Cart</span>
+                  <i class="fas fa-cart-plus"></i>
+                </button>
+              </div>
+              <div class="meta">
+                <div class="rating">
+                  <span class="rating-value">4.9</span>
+                  <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                  </div>
+                  <span class="rcount">(412 تقييم)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="offer-section pt-5 pb-5">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-12">
+            <div class="offer-title">العرض الأسبوعي!</div>
+            <div class="offer-card">
+              <div class="overlay">
+                <div class="offer-text text-center">
+                  <h2>خصم 40% على هذه البيتزا لمدة 24 ساعة فقط!</h2>
+                </div>
+              </div>
+              <div class="offer-image text-center">
+                <img src="assets/images/carousel-2.jpg" alt="عرض خاص على البيتزا" class="img-fluid rounded">
+              </div>
+
+            </div>
+          </div>
+        </div>
+    </section>
+  </main>
 </body>
 
 </html>

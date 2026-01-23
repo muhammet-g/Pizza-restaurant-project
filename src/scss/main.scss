@@ -1,25 +1,16 @@
+// استيراد الإعدادات أولاً (@use فقط قبل أي شيء)
+@use 'settings/colors' as *;
+@use 'settings/typography' as *;
+@use 'tools/mixins' as *;
+@use 'base/elements' as *;
+@use 'components/navbar' as *;
+@use 'components/hero' as *;
+@use 'components/offer' as *;
+@use 'components/pizza-card' as *;
+@use 'trumps/utilities' as *;
+
 // استيراد Google Fonts
 @import url('https://fonts.googleapis.com/css2?family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap');
 
-
-
-
-// استيراد الإعدادات
-@import 'settings/colors';
-
 // استيراد Bootstrap
 @import '~bootstrap/scss/bootstrap';
-
-// استيراد الأدوات
-@import 'tools/mixins';
-
-// استيراد العناصر الأساسية
-@import 'base/elements';
-
-// استيراد المكونات
-@import 'components/navbar';
-@import 'components/hero';
-@import 'components/pizza-card';
-
-// استيراد الأدوات المساعدة
-@import 'trumps/utilities';
