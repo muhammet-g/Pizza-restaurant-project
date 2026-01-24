@@ -3,4 +3,13 @@
 // =====================
 @use '../tools/mixins' as *;
 @use '../settings/colors' as *;
+@use '../settings/typography' as typog;
 
+.section-title.offer-title {
+    color: $maroon !important;
+    margin-top: 60px;
+}
+
+.section-title.menu-title{
+    color: #fff !important;
+}

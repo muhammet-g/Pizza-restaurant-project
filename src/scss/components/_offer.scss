@@ -2,56 +2,168 @@
 @use '../settings/typography' as *;
 @use '../tools/mixins' as *;
 @use '../base/elements' as *;
+@use '../settings/spacing' as *;
 
-.offer-title {
-    @include heading-2;
-    text-align: center;
-    color: $princeton-orange;
-    margin-bottom: 30px;
-}
-.offer-card {
-    position: relative;
-    width: 700px;
-    border: 5px $princeton-orange solid;
+// ==========================================================================
+// Offer Section - 3D Flip Animation
+// ==========================================================================
+.offer-section {
+  gap: $spacing-2xl;
+  padding: $spacing-3xl 0 $spacing-6xl 0;
+  .row {
+    justify-content: center;
+  }
+
+  // ==========================================================================
+  // Offer Card Main Container
+  // ==========================================================================
+  .new-card {
+    border: 5px $maroon solid;
     border-radius: 15px;
+    margin: 20px auto;
+    padding: 0;
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    height: 200px;
+    perspective: 1000px;
+    cursor: pointer;
     overflow: hidden;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin: 50px auto;
 
-    &:hover .overlay {
-        opacity: 0;
+    // Expand to full width when it's the only child
+    &:only-of-type {
+      max-width: 100%;
+      height: 250px;
     }
 
-    .overlay {
+    // ==========================================================================
+    // Card Inner (3D Container)
+    // ==========================================================================
+    .card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.6s ease-in-out;
+      transform-style: preserve-3d;
+
+      // ==========================================================================
+      // Card Front & Back
+      // ==========================================================================
+      .card-front,
+      .card-back {
         position: absolute;
-        top: 0;
-        left: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba($princeton-orange, 0.9);
-        opacity: 1;
-        transition: opacity 0.4s ease;
+        backface-visibility: hidden;
         display: flex;
         align-items: center;
         justify-content: center;
-        z-index: 10;
+        border-radius: 0.5rem;
+      }
 
-        .offer-text {
-            color: white;
-            padding: 20px;
+      // Card Front (Text Side)
+      .card-front {
+        background: $maroon;
+        z-index: 2;
+
+        &.offer-text {
+          color: rgb(255, 255, 255);
+          padding: 20px;
+
+          h2 {
+            font-size: 24px;
+            font-weight: bold;
+            line-height: 1.4;
+            text-align: center;
+          }
+        }
+      }
+
+      // Card Back (Image Side)
+      .card-back {
+        transform: rotateY(180deg);
+        z-index: 1;
+
+        &.offer-image {
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+          }
+        }
+      }
+    }
+
+    // ==========================================================================
+    // Hover Effect
+    // ==========================================================================
+    &:hover .card-inner {
+      transform: rotateY(180deg);
+    }
+  }
+}
+
+// ==========================================================================
+// Responsive Design
+// ==========================================================================
+@media (max-width: 992px) {
+  .offer-section {
+    .new-card {
+      max-width: 280px;
+      height: 180px;
+
+      .card-inner {
+        .card-front {
+          &.offer-text {
+            h2 {
+              font-size: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .offer-section {
+    .new-card {
+      max-width: 250px;
+      height: 160px;
+      margin: 15px auto;
+
+      .card-inner {
+        .card-front {
+          &.offer-text {
+            h2 {
+              font-size: 18px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .offer-section {
+    .new-card {
+      max-width: 100%;
+      height: 150px;
+      margin: 10px auto;
+
+      .card-inner {
+        .card-front {
+          &.offer-text {
+            padding: 15px;
 
             h2 {
-                font-size: 28px;
-                font-weight: bold;
-                line-height: 1.4;
+              font-size: 14px;
             }
+          }
         }
+      }
     }
-
-    img {
-        width: 100%;
-        height: auto;
-        display: block;
-    }
+  }
 }

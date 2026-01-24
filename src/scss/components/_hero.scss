@@ -12,53 +12,83 @@
   }
 }
 
+
+
+// Wave animation with delay - موجة مع تأخير 7 ثواني
+@keyframes waveWithDelay {
+  0% {
+    transform: translateY(0) scaleY(1);
+  }
+  14.285% {
+    transform: translateY(0) scaleY(1);
+  }
+  28.57% {
+    transform: translateY(-20px) scaleY(1.05);
+  }
+  42.855% {
+    transform: translateY(0) scaleY(1);
+  }
+  57.14% {
+    transform: translateY(-10px) scaleY(1.02);
+  }
+  71.425% {
+    transform: translateY(0) scaleY(1);
+  }
+  100% {
+    transform: translateY(0) scaleY(1);
+  }
+}
+
 .hero-section {
-  padding: 0;
-  background-color: $vanilla-custard;
+  position: relative;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100vh;
-  position: relative;
+  background-color: $vanilla-custard;
+  
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: hidden; 
 
   .carousel-wrapper {
+    position: absolute; 
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 100vh;
+    height: 100%; 
+    z-index: 1;
     overflow: hidden;
-    position: relative;
-  }
 
-  .carousel-inner {
-    width: 100%;
-    height: 100%;
-  }
-
-  .carousel-item {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #000;
+    .carousel, 
+    .carousel-inner, 
+    .carousel-item {
+      height: 100%;
+      width: 100%;
+      background-color: #000;
+    }
 
     .carousel-img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      display: block;
+      object-fit: cover; 
+      display: block; 
     }
   }
 
+ 
   .overly {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    z-index: 2; 
     background-color: rgba(255, 234, 174, 0.6);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    z-index: 5;
 
     .hello {
       font-size: 4rem;
@@ -68,6 +98,9 @@
       font-weight: $font-weight-extrabold;
       margin-top: 6rem;
       position: relative;
+      // Animation: الاسم / المدة / الدالة / التأخير / التكرار
+      animation: waveWithDelay 9s ease-in-out infinite;
+      // 9s = 7s تأخير + 2s الحركة
 
       &::after {
         content: '';
@@ -100,8 +133,6 @@
       margin-top: 2rem;
       animation: bounce 2s infinite;
       font-size: 70px;
-
+    }
   }
-}
-
 }

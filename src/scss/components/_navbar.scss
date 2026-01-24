@@ -2,20 +2,55 @@
 @use '../settings/spacing' as *;
 
 .navbar {
-    background-color: $pitch-black;
+    background-color: $amber-gold;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
     
-}
+    // ==========================================================================
+    // Navbar Links Hover Effect
+    // ==========================================================================
+    .navbar-nav {
+        .nav-link {
+            color: $pitch-black !important;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -5px;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background-color: $maroon;
+                transition: width 0.3s ease;
+            }
+
+            &:hover,
+            &.active {
+                color: $maroon !important;
+
+                &::after {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
 #pizza-logo {
     width: 50px;
     height: 50px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    transition: transform 0.3s ease;
 
+    &:hover {
+        transform: scale(1.1);
+    }
     
     img {
         width: 100%;
@@ -29,4 +64,68 @@
         color: $maroon;
         font-size: 1.5rem;
         font-weight: bold;
+        transition: all 0.3s ease;
     }
+
+    &:hover .store-title {
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+}
+
+// ==========================================================================
+// Cart Button Styling
+// ==========================================================================
+.btn-outline-danger {
+    color: white !important;
+    border-color: $maroon !important;
+    transition: all 0.3s ease !important;
+    position: relative !important;
+    background-color: $maroon !important;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+        transition: 0.5s;
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+        background-color: $maroon !important;
+        border-color: $maroon !important;
+        color: white !important;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15) !important;
+        transform: translateY(-5px);
+
+        &::before {
+            left: 100%;
+        }
+    }
+
+    &:focus {
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15) !important;
+    }
+
+    // ==========================================================================
+    // Badge Styling (Cart Count)
+    // ==========================================================================
+    .badge {
+        background-color: white !important;
+        color: $maroon !important;
+        border: 2px solid $maroon !important;
+        font-weight: 600;
+        min-width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

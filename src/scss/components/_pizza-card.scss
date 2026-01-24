@@ -7,7 +7,17 @@
 @use '../settings/spacing' as *;
 @use '../tools/mixins' as *;
 
-// Card styling
+// ==========================================================================
+// Menu Section
+// ==========================================================================
+section.menu-section {
+  background-color: $amber-gold;
+  padding: $spacing-3xl 0;
+}
+
+// ==========================================================================
+// Card Main Container
+// ==========================================================================
 .card {
   width: 360px;
   background: #fff !important;
@@ -23,238 +33,239 @@
   &:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-  }
-}
 
-// Badge styling
-// .badge {
-//   position: absolute;
-//   top: 10px;
-//   right: 10px;
-//   background: linear-gradient(
-//     to right,
-//     rgba(169, 3, 41, 1) 0%,
-//     rgba(196, 72, 72, 1) 44%,
-//     rgba(170, 34, 56, 1) 100%
-//   );
-//   color: #fff;
-//   padding: $spacing-xs $spacing-sm;
-//   font-size: 11px;
-//   font-weight: $font-weight-bold;
-//   letter-spacing: 1px;
-//   text-transform: uppercase;
-//   border-radius: 10px;
-//   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-//   z-index: 10;
-// }
-
-// Image tilt effect
-.tilt {
-  overflow: hidden;
-}
-
-.img {
-  height: 200px;
-  overflow: hidden;
-  border-radius: 10px;
-  margin-top: 10px;
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s;
-  }
-}
-
-.card:hover .img img {
-  transform: scale(1.05);
-}
-
-// Info section
-.info {
-  padding: $spacing-lg;
-}
-
-
-.title {
-  font-size: 18px;
-  font-weight: $font-weight-extrabold;
-  color: #18181b;
-  margin: 0 0 $spacing-sm;
-  letter-spacing: -0.5px;
-}
-
-.desc {
-  font-size: 13px;
-  color: #52525b;
-  line-height: 1.4;
-  margin-bottom: $spacing-md;
-}
-
-// Features tags
-.feats {
-  display: flex;
-  gap: $spacing-xs;
-  margin-bottom: $spacing-lg;
-}
-
-.feat {
-  font-size: 10px;
-  background: #f4f4f5;
-  color: #71717a;
-  padding: $spacing-xs $spacing-sm;
-  border-radius: 10px;
-  font-weight: $font-weight-medium;
-}
-
-// Bottom section (price & button)
-.bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: $spacing-md;
-}
-
-.price {
-  display: flex;
-  flex-direction: column;
-}
-
-.new {
-  font-size: 20px;
-  font-weight: $font-weight-extrabold;
-  color: #18181b;
-}
-
-// Add to cart button
-.btn {
-  @include btn($red, white, 10px 20px, 10px);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 140px !important;
-  max-width: 140px !important;
-  gap: $spacing-xs;
-  font-size: 13px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-  position: relative;
-
-  span {
-    transition: margin-right 0.3s;
-    display: inline-block;
-  }
-
-  i {
-    transition: transform 0.3s;
-    font-size: 16px;
-    display: inline-block;
-  }
-
-  &:hover {
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-
-    &::before {
-      left: 100%;
-    }
-
-    span {
-      margin-right: $spacing-xs;
-    }
-
-    i {
-      transform: scale(1.2) rotate(-10deg);
+    .img img {
+      transform: scale(1.05);
     }
   }
 
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-    transition: 0.5s;
-  }
-}
-
-// Meta section (rating & stock)
-.meta {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-top: 1px solid #f4f4f5;
-  padding-top: $spacing-md;
-}
-
-// Rating with Font Awesome stars
-.rating {
-  display: flex;
-  align-items: center;
-  gap: $spacing-sm;
-
-  .rating-value {
-    font-size: 16px;
-    font-weight: $font-weight-bold;
-    color: $pitch-black;
-    min-width: 30px;
-  }
-
-  .stars {
-    display: flex;
-    align-items: center;
-    gap: $spacing-xs;
-
-    i {
-      font-size: 14px;
-      color: $amber-gold;
-      transition: transform 0.2s;
-
-      &:hover {
-        transform: scale(1.2);
-      }
-    }
-  }
-
-  .rcount {
-    font-size: 11px;
-    color: #71717a;
-    margin-left: $spacing-xs;
-  }
-}
-
-
-// Responsive design
-@media (max-width: 400px) {
-  .card {
-    width: 90%;
-  }
-
-  .title {
-    font-size: 16px;
+  // ==========================================================================
+  // Image Section
+  // ==========================================================================
+  .tilt {
+    overflow: hidden;
   }
 
   .img {
-    height: 180px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-top: 10px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
   }
 
-  .bottom {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: $spacing-lg;
-  }
+  // ==========================================================================
+  // Info Section
+  // ==========================================================================
+  .info {
+    padding: $spacing-lg;
 
-  .price {
-    margin-bottom: $spacing-sm;
-  }
+    // ==========================================================================
+    // Title
+    // ==========================================================================
+    .title {
+      font-size: 18px;
+      font-weight: $font-weight-extrabold;
+      color: #18181b;
+      margin: 0 0 $spacing-sm;
+      letter-spacing: -0.5px;
+    }
 
-  .btn {
-    width: 100%;
-    justify-content: center;
-    gap: 8px;
-    
-    i {
-      margin-left: 8px;
+    // ==========================================================================
+    // Description
+    // ==========================================================================
+    .desc {
+      font-size: 13px;
+      color: #52525b;
+      line-height: 1.4;
+      margin-bottom: $spacing-md;
+    }
+
+    // ==========================================================================
+    // Features Tags
+    // ==========================================================================
+    .feats {
+      display: flex;
+      gap: $spacing-xs;
+      margin-bottom: $spacing-lg;
+
+      .feat {
+        font-size: 10px;
+        background: #f4f4f5;
+        color: #71717a;
+        padding: $spacing-xs $spacing-sm;
+        border-radius: 10px;
+        font-weight: $font-weight-medium;
+      }
+    }
+
+    // ==========================================================================
+    // Bottom Section (Price & Button)
+    // ==========================================================================
+    .bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: $spacing-md;
+
+      .price {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .new {
+        font-size: 20px;
+        font-weight: $font-weight-extrabold;
+        color: #18181b;
+      }
+
+      // ==========================================================================
+      // Add to Cart Button
+      // ==========================================================================
+      .btn {
+        @include btn($maroon, white, 10px 20px, 10px);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 160px !important;
+        max-width: 160px !important;
+        gap: $spacing-xs;
+        font-size: 13px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        position: relative;
+
+        span {
+          transition: margin-right 0.3s;
+          display: inline-block;
+        }
+
+        i {
+          transition: transform 0.3s;
+          font-size: 16px;
+          display: inline-block;
+        }
+
+        &:hover {
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+
+          &::before {
+            left: 100%;
+          }
+
+          span {
+            margin-right: $spacing-xs;
+          }
+
+          i {
+            transform: scale(1.2) rotate(-10deg);
+          }
+        }
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+          transition: 0.5s;
+        }
+      }
+    }
+
+    // ==========================================================================
+    // Meta Section (Rating & Stock)
+    // ==========================================================================
+    .meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid #f4f4f5;
+      padding-top: $spacing-md;
+
+      // ==========================================================================
+      // Rating with Font Awesome Stars
+      // ==========================================================================
+      .rating {
+        display: flex;
+        align-items: center;
+        gap: $spacing-sm;
+
+        .rating-value {
+          font-size: 16px;
+          font-weight: $font-weight-bold;
+          color: $pitch-black;
+          min-width: 30px;
+        }
+
+        .stars {
+          display: flex;
+          align-items: center;
+          gap: $spacing-xs;
+
+          i {
+            font-size: 14px;
+            color: $amber-gold;
+            transition: transform 0.2s;
+
+            &:hover {
+              transform: scale(1.2);
+            }
+          }
+        }
+
+        .rcount {
+          font-size: 11px;
+          color: #71717a;
+          margin-left: $spacing-xs;
+        }
+      }
     }
   }
 }
+
+// ==========================================================================
+// Responsive Design
+// ==========================================================================
+@media (max-width: 400px) {
+  .card {
+    width: 90%;
+
+    .title {
+      font-size: 16px;
+    }
+
+    .img {
+      height: 180px;
+    }
+
+    .bottom {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: $spacing-lg;
+
+      .price {
+        margin-bottom: $spacing-sm;
+      }
+
+      .btn {
+        width: 100%;
+        justify-content: center;
+        gap: 8px;
+
+        i {
+          margin-left: 8px;
+        }
+      }
+    }
+  }
+}
+
+

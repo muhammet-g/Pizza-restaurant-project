@@ -1,0 +1,193 @@
+@use '../settings/colors' as *;
+@use '../settings/typography' as *;
+@use '../settings/spacing' as *;
+
+// ==========================================================================
+// Footer Component
+// ==========================================================================
+.footer {
+  background-color: $amber-gold;
+  color: $pitch-black;
+  padding: $spacing-3xl 0 $spacing-2xl 0;
+  margin-top: $spacing-3xl;
+
+  // ==========================================================================
+  // Footer Content
+  // ==========================================================================
+  .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin-bottom: $spacing-2xl;
+  }
+
+  .footer-section {
+    margin-bottom: $spacing-2xl;
+
+    h4 {
+      font-size: 1.2rem;
+      font-weight: $font-weight-bold;
+      color: $maroon;
+      margin-bottom: $spacing-md;
+      letter-spacing: -0.5px;
+    }
+
+    // ==========================================================================
+    // Footer Logo
+    // ==========================================================================
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: $spacing-md;
+
+      img {
+        width: 60px;
+        height: 60px;
+        object-fit: contain;
+      }
+
+      h3 {
+        font-size: 1.5rem;
+        font-weight: $font-weight-extrabold;
+        color: $maroon;
+        margin: 0;
+      }
+    }
+
+    // ==========================================================================
+    // Footer Links
+    // ==========================================================================
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        margin-bottom: $spacing-sm;
+
+        a {
+          color: $pitch-black;
+          text-decoration: none;
+          font-size: 0.95rem;
+          transition: color 0.3s ease;
+
+          &:hover {
+            color: $maroon;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+    // ==========================================================================
+    // Social Links
+    // ==========================================================================
+    .social-links {
+      display: flex;
+      gap: $spacing-md;
+
+      .social-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+        height: 45px;
+        background-color: $maroon;
+        color: white;
+        border-radius: 50%;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        font-size: 1.2rem;
+
+        &:hover {
+          background-color: white;
+          color: $maroon;
+          transform: translateY(-5px);
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+      }
+    }
+  }
+
+  // ==========================================================================
+  // Footer Divider
+  // ==========================================================================
+  .footer-divider {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(24, 24, 27, 0.2);
+    margin: $spacing-2xl 0;
+  }
+
+  // ==========================================================================
+  // Footer Bottom
+  // ==========================================================================
+  .footer-bottom {
+    text-align: center;
+
+    p {
+      font-size: 0.9rem;
+      color: $pitch-black;
+      margin: 0;
+      font-weight: $font-weight-medium;
+    }
+  }
+}
+
+// ==========================================================================
+// Responsive Design
+// ==========================================================================
+@media (max-width: 768px) {
+  .footer {
+    padding: $spacing-2xl 0 $spacing-md 0;
+
+    .footer-section {
+      text-align: center;
+
+      .footer-logo {
+        justify-content: center;
+      }
+
+      .social-links {
+        justify-content: center;
+      }
+    }
+
+    .footer-bottom {
+      p {
+        font-size: 0.85rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .footer {
+    padding: $spacing-xl 0 $spacing-md 0;
+
+    .footer-section {
+      .footer-logo {
+        gap: $spacing-sm;
+
+        img {
+          width: 50px;
+          height: 50px;
+        }
+
+        h3 {
+          font-size: 1.2rem;
+        }
+      }
+
+      h4 {
+        font-size: 1rem;
+      }
+
+      .social-link {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+      }
+    }
+  }
+}

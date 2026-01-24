@@ -9,5 +9,11 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: $vanilla-custard !important;
+}
+
+.section-title {
+    @include heading-2;
+    text-align: center;
+    color: $princeton-orange;
+    margin-bottom: 30px;
 }

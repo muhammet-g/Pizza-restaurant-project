@@ -10,12 +10,13 @@
     href="https://fonts.googleapis.com/css2?family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <title>ركن البيتزا</title>
 </head>
 
 <body>
   <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top py-1">
+    <nav class="navbar navbar-expand-lg  shadow-sm fixed-top py-1">
       <div class="container">
         <a class="navbar-brand d-flex align-items-center" href="index.html">
           <div id="pizza-logo">
@@ -48,7 +49,7 @@
           <div class="d-flex ms-lg-4">
             <a href="cart.html" class="btn btn-outline-danger position-relative">
               سلة الطلبات
-              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill">
                 0
               </span>
             </a>
@@ -57,13 +58,12 @@
       </div>
     </nav>
     <section class="hero-section">
-      <div class="overly">
-        <h1 class="hello">مرحبا بكم في <span class="store-name">ركن البيتزا</span></h1>
-        <h2 class="discover-us text-center mb-5">اكتشف قائمتنا الشهية</h2>
-        <i class="fa-solid fa-angles-down angles-down-custom"></i>
-      </div>
       <div class="carousel-wrapper">
-
+        <div class="overly">
+          <h1 class="hello">مرحبا بكم في <span class="store-name">ركن البيتزا</span></h1>
+          <h2 class="discover-us text-center mb-5">اكتشف قائمتنا الشهية</h2>
+          <i class="fa-solid fa-angles-down angles-down-custom"></i>
+        </div>
         <div id="pizzaCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000"
           data-bs-pause="false">
 
@@ -98,6 +98,7 @@
     <section class="menu-section pt-5 pb-5">
       <div class="container">
         <div class="row">
+          <h2 class="section-title menu-title text-center mb-4">قائمة البيتزا</h2>
           <!-- عناصر القائمة ستضاف هنا -->
           <div class="col-12 col-md-5 col-lg-3 card">
             <div class="tilt">
@@ -112,7 +113,7 @@
                   <span class="new">﷼ 12</span>
                 </div>
                 <button class="btn">
-                  <span>Add to Cart</span>
+                  <span>أضف إلى السلة</span>
                   <i class="fas fa-cart-plus"></i>
                 </button>
               </div>
@@ -144,7 +145,7 @@
                   <span class="new">﷼ 9</span>
                 </div>
                 <button class="btn">
-                  <span>Add to Cart</span>
+                  <span>أضف إلى السلة</span>
                   <i class="fas fa-cart-plus"></i>
                 </button>
               </div>
@@ -177,7 +178,7 @@
                   <span class="new">﷼ 19</span>
                 </div>
                 <button class="btn">
-                  <span>Add to Cart</span>
+                  <span>أضف إلى السلة</span>
                   <i class="fas fa-cart-plus"></i>
                 </button>
               </div>
@@ -199,26 +200,93 @@
         </div>
       </div>
     </section>
-    <section class="offer-section pt-5 pb-5">
+
+    <section class="offer-section">
       <div class="container">
-        <div class="row align-items-center">
-          <div class="col-12">
-            <div class="offer-title">العرض الأسبوعي!</div>
-            <div class="offer-card">
-              <div class="overlay">
-                <div class="offer-text text-center">
+        <div class="row text-center">
+          <h2 class="section-title offer-title text-center mb-4">العروض الأسبوعي!</h2>
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="new-card offer-card">
+              <div class="card-inner">
+                <div class="card-front offer-text text-center">
                   <h2>خصم 40% على هذه البيتزا لمدة 24 ساعة فقط!</h2>
                 </div>
+                <div class="card-back offer-image text-center">
+                  <img src="assets/images/carousel-1.jpg" alt="عرض خاص على البيتزا">
+                </div>
               </div>
-              <div class="offer-image text-center">
-                <img src="assets/images/carousel-2.jpg" alt="عرض خاص على البيتزا" class="img-fluid rounded">
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="new-card offer-card">
+              <div class="card-inner">
+                <div class="card-front offer-text text-center">
+                  <h2>خصم 35% على هذه البيتزا لمدة 48 ساعة!</h2>
+                </div>
+                <div class="card-back offer-image text-center">
+                  <img src="assets/images/carousel-3.jpg" alt="عرض خاص على البيتزا">
+                </div>
               </div>
-
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="new-card offer-card">
+              <div class="card-inner">
+                <div class="card-front offer-text text-center">
+                  <h2>خصم 30% على هذه البيتزا هذا الأسبوع!</h2>
+                </div>
+                <div class="card-back offer-image text-center">
+                  <img src="assets/images/carousel-4.jpg" alt="عرض خاص على البيتزا">
+                </div>
+              </div>
             </div>
           </div>
         </div>
+      </div>
     </section>
   </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row footer-content">
+        <div class="col-12 col-md-4 footer-section">
+          <div class="footer-logo">
+            <img src="assets/images/pizza-logo.png" alt="pizza-logo">
+            <h3>ركن البيتزا</h3>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-4 footer-section">
+          <h4>روابط سريعة</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="pizza.html">أنواع البيتزا</a></li>
+            <li><a href="about.html">عن المطعم</a></li>
+            <li><a href="contact.html">اتصل بنا</a></li>
+          </ul>
+        </div>
+
+        <div class="col-12 col-md-4 footer-section">
+          <h4>تابعنا</h4>
+          <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-divider"></div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="year"></span> ركن البيتزا. جميع الحقوق محفوظة.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/index.js"></script>
 </body>
 
 </html>
