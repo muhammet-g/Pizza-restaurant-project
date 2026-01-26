@@ -39,6 +39,7 @@ module.exports = {
     new HtmlWebpackPlugin({ template: './src/index.html' }),
     new HtmlWebpackPlugin({ template: './src/pizza.html', filename: 'pizza.html' }),
     new HtmlWebpackPlugin({ template: './src/about.html', filename: 'about.html' }),
+    new HtmlWebpackPlugin({ template: './src/contact.html', filename: 'contact.html' }),
     new MiniCssExtractPlugin({ filename: 'css/main.css' }),
   ],
   devServer: {
