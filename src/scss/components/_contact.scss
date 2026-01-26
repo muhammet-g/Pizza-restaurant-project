@@ -5,7 +5,7 @@
 .hero-contact {
   padding-top: 2rem;
   padding-bottom: 4rem;
-  min-height: 100vh;
+  min-height: auto;
   background: linear-gradient(135deg, rgba($maroon, 0.05) 0%, rgba($princeton-orange, 0.05) 100%);
 
   h1 {
@@ -19,7 +19,7 @@
   }
 
   .lead {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: $pitch-black;
     line-height: 1.8;
   }
@@ -43,6 +43,7 @@
       margin-top: 0.5rem;
       flex-shrink: 0;
       color: $maroon;
+      margin-left: 1rem;
     }
 
     h5 {
@@ -61,7 +62,120 @@
   }
 }
 
-.contact-form {
+// Map Container
+.map-container {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  height: 300px;
+
+  iframe {
+    border: none;
+    border-radius: 12px;
+  }
+}
+
+// Working Hours
+.working-hours {
+  border: 2px solid rgba($maroon, 0.2);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: $maroon;
+    box-shadow: 0 6px 20px rgba($maroon, 0.15);
+    transform: translateY(-5px);
+  }
+
+  .card-title {
+    color: $maroon;
+    font-weight: 700;
+    font-size: 1.3rem;
+  }
+
+  table {
+    margin-bottom: 0;
+
+    td {
+      padding: 1rem;
+      border-bottom: 1px solid rgba($maroon, 0.1);
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      &.day {
+        font-weight: 600;
+        color: $maroon;
+        width: 40%;
+      }
+
+      &.time {
+        color: $pitch-black;
+        font-size: 0.95rem;
+      }
+    }
+  }
+}
+
+// Delivery Areas
+.delivery-areas {
+  border: 2px solid rgba($maroon, 0.2);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: $maroon;
+    box-shadow: 0 6px 20px rgba($maroon, 0.15);
+    transform: translateY(-5px);
+  }
+
+  .card-title {
+    color: $maroon;
+    font-weight: 700;
+    font-size: 1.3rem;
+  }
+
+  .areas-list {
+    .area-item {
+      display: flex;
+      align-items: center;
+      padding: 1rem;
+      border-radius: 6px;
+      margin-bottom: 0.8rem;
+      background-color: rgba($maroon, 0.02);
+      transition: all 0.2s ease;
+
+      &:hover {
+        background-color: rgba($maroon, 0.08);
+        transform: translateX(5px);
+      }
+
+      i {
+        color: $maroon;
+        font-size: 1.2rem;
+        margin-left: 1rem;
+      }
+
+      span {
+        flex: 1;
+        color: $pitch-black;
+        font-weight: 500;
+      }
+
+      small {
+        color: #999;
+        font-size: 0.85rem;
+        background-color: rgba($maroon, 0.1);
+        padding: 0.3rem 0.8rem;
+        border-radius: 4px;
+      }
+    }
+  }
+}
+
+// Contact Form Section
+.form-section {
   background: white;
   padding: 2.5rem;
   border-radius: 12px;
@@ -69,9 +183,17 @@
 
   @media (max-width: 768px) {
     padding: 1.5rem;
-    margin-top: 2rem;
   }
 
+  h2 {
+    color: $maroon;
+    font-weight: 700;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.contact-form {
   .form-label {
     font-weight: 600;
     color: $maroon;
@@ -79,12 +201,15 @@
     font-size: 0.95rem;
   }
 
-  .form-control {
-    padding: 0.7rem 1rem;
+  .form-control,
+  .form-select {
+    padding: 0.8rem 1rem;
     border: 2px solid #e0e0e0;
     border-radius: 6px;
     font-size: 0.95rem;
     transition: all 0.3s ease;
+    background-color: white;
+    color: $pitch-black;
 
     &:focus {
       border-color: $maroon;
@@ -95,11 +220,17 @@
     &::placeholder {
       color: #aaa;
     }
+
+    option {
+      color: $pitch-black;
+      background-color: white;
+    }
   }
 
   textarea.form-control {
     resize: vertical;
     font-family: $font-family-base;
+    min-height: 150px;
 
     &:focus {
       border-color: $maroon;
@@ -108,10 +239,11 @@
   }
 
   .btn-lg {
-    padding: 0.8rem 2rem;
+    padding: 1rem 2rem;
     font-weight: 600;
     border-radius: 6px;
     transition: all 0.3s ease;
+    font-size: 1.05rem;
 
     &:hover {
       transform: translateY(-2px);
@@ -120,6 +252,11 @@
 
     &:active {
       transform: translateY(0);
+    }
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
     }
   }
 
@@ -134,22 +271,39 @@
 .alert-success-custom {
   background-color: #d4edda;
   color: #155724;
-  border: 1px solid #c3e6cb;
+  border: 2px solid #c3e6cb;
   border-radius: 6px;
   padding: 1rem;
   margin-bottom: 1rem;
   animation: slideIn 0.3s ease;
+
+  i {
+    margin-left: 0.5rem;
+  }
 }
 
 // Error Message
 .alert-error-custom {
   background-color: #f8d7da;
   color: #721c24;
-  border: 1px solid #f5c6cb;
+  border: 2px solid #f5c6cb;
   border-radius: 6px;
   padding: 1rem;
   margin-bottom: 1rem;
   animation: slideIn 0.3s ease;
+
+  i {
+    margin-left: 0.5rem;
+  }
+}
+
+// is-invalid state
+.is-invalid {
+  border-color: #dc3545 !important;
+
+  &:focus {
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25) !important;
+  }
 }
 
 @keyframes slideIn {
@@ -160,5 +314,17 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .map-container {
+    height: 250px;
+    margin-top: 1rem;
+  }
+
+  .working-hours,
+  .delivery-areas {
+    margin-bottom: 1.5rem;
   }
 }

@@ -61,78 +61,171 @@
     <!-- ========== Contact Hero Section ========== -->
     <section class="hero-contact mt-5 pt-5">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <h1 class="display-4 fw-bold mb-4">اتصل بنا</h1>
-                    <p class="lead text-muted mb-4">نحن هنا للإجابة على جميع أسئلتك والاستماع لآرائك</p>
-                    <div class="contact-info mb-4">
+            <h1 class="display-4 fw-bold mb-2 text-center">اتصل بنا</h1>
+            <p class="lead text-muted mb-5 text-center">نحن هنا للإجابة على جميع أسئلتك والاستماع لآرائك</p>
+
+            <!-- Contact Information & Map -->
+            <div class="row mb-5">
+                <div class="col-lg-6 mb-4">
+                    <div class="contact-info">
                         <div class="info-item mb-3">
-                            <i class="fas fa-phone text-danger me-3"></i>
+                            <i class="fas fa-phone"></i>
                             <div>
                                 <h5>رقم الهاتف</h5>
                                 <p>+966 50 123 4567</p>
+                                <p class="small text-muted">متاح 24/7</p>
                             </div>
                         </div>
                         <div class="info-item mb-3">
-                            <i class="fas fa-envelope text-danger me-3"></i>
+                            <i class="fas fa-envelope"></i>
                             <div>
                                 <h5>البريد الإلكتروني</h5>
                                 <p>info@pizzacorner.com</p>
+                                <p class="small text-muted">سنرد عليك خلال 24 ساعة</p>
                             </div>
                         </div>
                         <div class="info-item mb-3">
-                            <i class="fas fa-map-marker-alt text-danger me-3"></i>
+                            <i class="fas fa-map-marker-alt"></i>
                             <div>
                                 <h5>العنوان</h5>
-                                <p>الرياض - شارع التحلية - المملكة العربية السعودية</p>
-                            </div>
-                        </div>
-                        <div class="info-item">
-                            <i class="fas fa-clock text-danger me-3"></i>
-                            <div>
-                                <h5>أوقات العمل</h5>
-                                <p>من الساعة 10 صباحاً حتى 11 مساءً - يومياً</p>
+                                <p>الرياض - شارع التحلية</p>
+                                <p class="small text-muted">المملكة العربية السعودية</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-6">
-                    <form id="contactForm" class="contact-form">
-                        <div class="mb-3">
-                            <label for="name" class="form-label">الاسم الكامل</label>
-                            <input type="text" class="form-control" id="name" name="name" required>
-                            <small class="text-danger" id="name-error"></small>
-                        </div>
+                <!-- Map -->
+                <div class="col-lg-6 mb-4">
+                    <div class="map-container">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3626.0883644651897!2d46.6753!3d24.7746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f01a9c9c9c9cb%3A0x0!2sAl%20Tahlia%20Street%2C%20Riyadh!5e0!3m2!1sar!2ssa!4v1234567890"
+                            width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
 
-                        <div class="mb-3">
-                            <label for="email" class="form-label">البريد الإلكتروني</label>
-                            <input type="email" class="form-control" id="email" name="email" required>
-                            <small class="text-danger" id="email-error"></small>
+            <!-- Working Hours -->
+            <div class="row mb-5">
+                <div class="col-md-6">
+                    <div class="working-hours card">
+                        <div class="card-body">
+                            <h3 class="card-title mb-4">
+                                <i class="fas fa-clock me-2"></i>أوقات العمل
+                            </h3>
+                            <table class="table table-borderless">
+                                <tbody>
+                                    <tr>
+                                        <td class="day">السبت - الخميس</td>
+                                        <td class="time">10:00 صباحاً - 11:00 مساءً</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="day">الجمعة</td>
+                                        <td class="time">02:00 ظهراً - 11:00 مساءً</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="day">العطل الرسمية</td>
+                                        <td class="time">مفتوح</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
+                    </div>
+                </div>
 
-                        <div class="mb-3">
-                            <label for="phone" class="form-label">رقم الهاتف</label>
-                            <input type="tel" class="form-control" id="phone" name="phone" required>
-                            <small class="text-danger" id="phone-error"></small>
+                <!-- Delivery Areas -->
+                <div class="col-md-6">
+                    <div class="delivery-areas card">
+                        <div class="card-body">
+                            <h3 class="card-title mb-4">
+                                <i class="fas fa-truck me-2"></i>مناطق التوصيل
+                            </h3>
+                            <div class="areas-list">
+                                <div class="area-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>الرياض - وسط البلد</span>
+                                    <small>30 دقيقة</small>
+                                </div>
+                                <div class="area-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>شارع التحلية والعليا</span>
+                                    <small>25 دقيقة</small>
+                                </div>
+                                <div class="area-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>الملز والنخيل</span>
+                                    <small>35 دقيقة</small>
+                                </div>
+                                <div class="area-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>الروضة والعقيق</span>
+                                    <small>40 دقيقة</small>
+                                </div>
+                            </div>
                         </div>
+                    </div>
+                </div>
+            </div>
 
-                        <div class="mb-3">
-                            <label for="subject" class="form-label">الموضوع</label>
-                            <input type="text" class="form-control" id="subject" name="subject" required>
-                            <small class="text-danger" id="subject-error"></small>
-                        </div>
+            <!-- Contact Form -->
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="form-section">
+                        <h2 class="mb-4 text-center">
+                            <i class="fas fa-envelope-open-text me-2"></i>أرسل لنا رسالة
+                        </h2>
+                        <form id="contactForm" class="contact-form">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="name" class="form-label">الاسم الكامل</label>
+                                    <input type="text" class="form-control" id="name" name="name"
+                                        placeholder="أدخل اسمك الكامل" required>
+                                    <small class="text-danger" id="name-error"></small>
+                                </div>
 
-                        <div class="mb-3">
-                            <label for="message" class="form-label">الرسالة</label>
-                            <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
-                            <small class="text-danger" id="message-error"></small>
-                        </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="email" class="form-label">البريد الإلكتروني</label>
+                                    <input type="email" class="form-control" id="email" name="email"
+                                        placeholder="your@email.com" required>
+                                    <small class="text-danger" id="email-error"></small>
+                                </div>
+                            </div>
 
-                        <button type="submit" class="btn btn-danger btn-lg w-100">
-                            <i class="fas fa-paper-plane me-2"></i>إرسال الرسالة
-                        </button>
-                    </form>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="phone" class="form-label">رقم الهاتف</label>
+                                    <input type="tel" class="form-control" id="phone" name="phone"
+                                        placeholder="+966501234567" required>
+                                    <small class="text-danger" id="phone-error"></small>
+                                </div>
+
+                                <div class="col-md-6 mb-3">
+                                    <label for="subject" class="form-label">الموضوع</label>
+                                    <select class="form-control" id="subject" name="subject" required>
+                                        <option value="">اختر الموضوع</option>
+                                        <option value="complaint">شكوى أو مشكلة</option>
+                                        <option value="suggestion">اقتراح</option>
+                                        <option value="inquiry">استفسار</option>
+                                        <option value="order">مشكلة في الطلب</option>
+                                        <option value="other">أخرى</option>
+                                    </select>
+                                    <small class="text-danger" id="subject-error"></small>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="message" class="form-label">الرسالة</label>
+                                <textarea class="form-control" id="message" name="message" rows="6"
+                                    placeholder="اكتب رسالتك هنا..." required></textarea>
+                                <small class="text-danger" id="message-error"></small>
+                            </div>
+
+                            <button type="submit" class="btn btn-danger btn-lg w-100">
+                                <i class="fas fa-paper-plane me-2"></i>إرسال الرسالة
+                            </button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
