@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>عن المطعم - ركن البيتزا</title>
+</head>
+
+<body>
+    <!-- ========== Navigation Bar ========== -->
+    <nav class="navbar navbar-expand-lg shadow-sm fixed-top py-1">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <div id="pizza-logo">
+                    <img src="assets/images/pizza-logo.png" alt="pizza-logo">
+                </div>
+                <span class="store-title me-3 ms-3">ركن البيتزا</span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+                aria-controls="mainNavbar" aria-expanded="false" aria-label="تبديل القائمة">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNavbar">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">الرئيسية</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pizza.html">أنواع البيتزا</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="about.html">عن المطعم</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">اتصل بنا</a>
+                    </li>
+                </ul>
+
+                <div class="d-flex ms-lg-4">
+                    <a href="cart.html" class="btn btn-outline-danger position-relative">
+                        سلة الطلبات
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill">
+                            0
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ========== Hero Section ========== -->
+    <section class="about-hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="hero-content">
+                        <h1 class="hero-title">عن ركن البيتزا</h1>
+                        <p class="hero-subtitle">نحن نقدم أفضل البيتزا بأعلى جودة</p>
+                        <p class="hero-description">
+                            في ركن البيتزا، نؤمن أن الجودة والطعم هما المفتاح لرضا عملائنا.
+                            نستخدم أفضل المكونات الطازة والعضوية لإعداد كل بيتزا بحب واهتمام.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-image">
+                        <img src="assets/images/vg-1.jpg" alt="ركن البيتزا">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== Story Section ========== -->
+    <section class="our-story">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="section-title text-center mb-5">قصتنا</h2>
+                </div>
+            </div>
+
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="story-image">
+                        <img src="assets/images/vg-2.jpg" alt="قصتنا">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="story-content">
+                        <h3 class="story-title">كيف بدأت رحلتنا</h3>
+                        <p class="story-text">
+                            بدأت ركن البيتزا منذ أكثر من 10 سنوات برؤية بسيطة وهي تقديم بيتزا
+                            ذات جودة عالية بأسعار معقولة للعائلات السعودية.
+                        </p>
+                        <p class="story-text">
+                            بدأنا بفرع واحد صغير، لكن بفضل جودة منتجاتنا وخدمة عملائنا المتميزة،
+                            استطعنا التوسع والآن لدينا عدة فروع في مختلف أنحاء المملكة.
+                        </p>
+                        <p class="story-text">
+                            اليوم، ركن البيتزا هو الوجهة الأولى للعديد من العائلات التي تبحث عن
+                            بيتزا شهية وخدمة ممتازة.
+                        </p>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <!-- ========== Values Section ========== -->
+    <section class="our-values">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="section-title text-center mb-5">قيمنا الأساسية</h2>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Value 1 -->
+                <div class="col-md-4 mb-4">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4 class="value-title">الجودة</h4>
+                        <p class="value-text">
+                            نستخدم أفضل المكونات الطازة والعضوية في جميع منتجاتنا لضمان
+                            أعلى مستويات الجودة والطعم.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Value 2 -->
+                <div class="col-md-4 mb-4">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h4 class="value-title">الصدق</h4>
+                        <p class="value-text">
+                            نتعامل مع عملائنا بشفافية وصدق، ولا نتردد عن الاعتراف بأخطائنا
+                            وتصحيحها بسرعة.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Value 3 -->
+                <div class="col-md-4 mb-4">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h4 class="value-title">الخدمة</h4>
+                        <p class="value-text">
+                            فريقنا مدرب على أعلى مستويات الخدمة العملاء، ونسعى لتقديم تجربة
+                            لا تُنسى لكل عميل.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== Team Section ========== -->
+    <section class="our-team">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="section-title text-center mb-5">فريقنا</h2>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Team Member 1 -->
+                <div class="col-md-4 mb-4">
+                    <div class="team-card">
+                        <div class="team-image">
+                            <img src="assets/images/medium-shot-chef-posing-with-spatula.jpg" alt="مدير المطعم">
+                        </div>
+                        <h4 class="team-name">أحمد محمد</h4>
+                        <p class="team-role">مدير المطعم</p>
+                        <p class="team-bio">
+                            لديه أكثر من 15 سنة من الخبرة في صناعة الأغذية والمطاعم.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Team Member 2 -->
+                <div class="col-md-4 mb-4">
+                    <div class="team-card">
+                        <div class="team-image">
+                            <img src="assets/images/Chef's Fiery Performance.jpg" alt="الشيف الرئيسي">
+                        </div>
+                        <h4 class="team-name">محمود علي</h4>
+                        <p class="team-role">الشيف الرئيسي</p>
+                        <p class="team-bio">
+                            متخصص في الطهي الإيطالي وله عدة جوائز عالمية.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Team Member 3 -->
+                <div class="col-md-4 mb-4">
+                    <div class="team-card">
+                        <div class="team-image">
+                            <img src="assets/images/happy-young-cook-uniform-holding-salad.jpg" alt="خبير البيتزا">
+                        </div>
+                        <h4 class="team-name">سامي محمود</h4>
+                        <p class="team-role">خبير البيتزا</p>
+                        <p class="team-bio">
+                            متخصص في فن تحضير البيتزا الإيطالية الأصلية بتقنيات عالمية.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== Stats Section ========== -->
+    <section class="our-stats">
+        <div class="container">
+            <div class="row text-center">
+                <!-- Stat 1 -->
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="stat-card">
+                        <div class="stat-number">10+</div>
+                        <div class="stat-label">سنوات من الخبرة</div>
+                    </div>
+                </div>
+
+                <!-- Stat 2 -->
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="stat-card">
+                        <div class="stat-number">50K+</div>
+                        <div class="stat-label">عميل سعيد</div>
+                    </div>
+                </div>
+
+                <!-- Stat 3 -->
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="stat-card">
+                        <div class="stat-number">5</div>
+                        <div class="stat-label">فروع موزعة</div>
+                    </div>
+                </div>
+
+                <!-- Stat 4 -->
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="stat-card">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">مكونات طبيعية</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== Call to Action ========== -->
+    <section class="about-cta">
+        <div class="container text-center">
+            <h2>هل أنت جاهز لتجربة البيتزا الأفضل؟</h2>
+            <p>اطلب الآن واستمتع بأفضل البيتزا في المملكة</p>
+            <a href="pizza.html" class="btn btn-primary btn-lg mt-4">اعرض القائمة الآن</a>
+        </div>
+    </section>
+    </main>
+
+    <!-- ========== Footer ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row footer-content">
+
+                <div class="col-12 col-md-4 footer-section">
+                    <h4>روابط سريعة</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="pizza.html">أنواع البيتزا</a></li>
+                        <li><a href="about.html">عن المطعم</a></li>
+                        <li><a href="contact.html">اتصل بنا</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-12 col-md-4 footer-section">
+                    <h4>تابعنا</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4 footer-section footer-contact">
+                    <h4>اتصل بنا</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> 920000000</p>
+                        <p><i class="fas fa-envelope"></i> info@pizzakorner.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> الرياض، السعودية</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> ركن البيتزا. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/index.js"></script>
+</body>
+
+</html>

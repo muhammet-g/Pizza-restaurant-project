@@ -1,0 +1,510 @@
+// Import required settings
+@use '../settings/colors' as *;
+@use '../settings/typography' as *;
+@use '../settings/spacing' as *;
+@use '../tools/mixins' as *;
+
+// ==================
+// About Page Styles
+// ==================
+
+// Hero Section
+.about-hero {
+  padding: 100px 0 60px 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  margin-top: 70px;
+
+  .hero-content {
+    .hero-title {
+      font-size: 3.5rem;
+      font-weight: 900;
+      color: $pitch-black;
+      margin-bottom: 15px;
+      line-height: 1.2;
+
+      @media (max-width: 768px) {
+        font-size: 2.5rem;
+      }
+    }
+
+    .hero-subtitle {
+      font-size: 1.5rem;
+      color: $maroon;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .hero-description {
+      font-size: 1.1rem;
+      color: #555;
+      line-height: 1.8;
+      margin-bottom: 0;
+    }
+  }
+
+  .hero-image {
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+  }
+}
+
+// Story Section
+.our-story {
+  padding: 80px 0;
+  background-color: white;
+
+  .section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: $pitch-black;
+    margin-bottom: 40px;
+  }
+
+  .story-image {
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  .story-content {
+    .story-title {
+      font-size: 2rem;
+      font-weight: 800;
+      color: $pitch-black;
+      margin-bottom: 20px;
+    }
+
+    .story-text {
+      font-size: 1.05rem;
+      color: #555;
+      line-height: 1.8;
+      margin-bottom: 15px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+// Values Section
+.our-values {
+  padding: 80px 0;
+  background-color: #f8f9fa;
+
+  .section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: $pitch-black;
+    margin-bottom: 40px;
+  }
+
+  .value-card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    height: 100%;
+
+    &:hover {
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      transform: translateY(-10px);
+    }
+
+    .value-icon {
+      font-size: 3rem;
+      color: $maroon;
+      margin-bottom: 15px;
+
+      i {
+        display: inline-block;
+      }
+    }
+
+    .value-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: $pitch-black;
+      margin-bottom: 15px;
+    }
+
+    .value-text {
+      font-size: 0.95rem;
+      color: #666;
+      line-height: 1.6;
+      margin: 0;
+    }
+  }
+}
+
+// Team Section
+.our-team {
+  padding: 80px 0;
+  background-color: white;
+
+  .section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: $pitch-black;
+    margin-bottom: 40px;
+  }
+
+  .team-card {
+    background-color: #f8f9fa;
+    border-radius: 12px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+
+    &:hover {
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      transform: translateY(-8px);
+
+      .team-image {
+        img {
+          transform: scale(1.1);
+        }
+      }
+    }
+
+    .team-image {
+      overflow: hidden;
+      height: 250px;
+      background-color: #ddd;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+    }
+
+    .team-name {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: $pitch-black;
+      margin-top: 20px;
+      margin-bottom: 5px;
+    }
+
+    .team-role {
+      font-size: 1rem;
+      color: $maroon;
+      font-weight: 600;
+      margin-bottom: 15px;
+      margin-top: 0;
+    }
+
+    .team-bio {
+      font-size: 0.95rem;
+      color: #666;
+      line-height: 1.6;
+      padding: 0 15px 20px 15px;
+      margin: 0;
+    }
+  }
+}
+
+// Stats Section
+.our-stats {
+  padding: 80px 0;
+  background: linear-gradient(135deg, $maroon 0%, #a01414 100%);
+  color: white;
+
+  .stat-card {
+    padding: 30px 20px;
+
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 900;
+      margin-bottom: 10px;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .stat-label {
+      font-size: 1.1rem;
+      font-weight: 600;
+      opacity: 0.95;
+    }
+  }
+}
+
+// Call to Action Section
+.about-cta {
+  padding: 80px 0;
+  background-color: #f8f9fa;
+  text-align: center;
+
+  h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: $pitch-black;
+    margin-bottom: 15px;
+  }
+
+  p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 0;
+  }
+
+  .btn-primary {
+    background-color: $maroon;
+    border-color: $maroon;
+    padding: 12px 40px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: darken($maroon, 10%);
+      border-color: darken($maroon, 10%);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(119, 28, 28, 0.3);
+    }
+  }
+}
+
+// ==========================================================================
+// Footer Component
+// ==========================================================================
+.footer {
+  background-color: $amber-gold;
+  color: $pitch-black;
+  padding: $spacing-3xl 0 $spacing-2xl 0;
+  margin-top: 0;
+
+  // ==========================================================================
+  // Footer Content
+  // ==========================================================================
+  .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin-bottom: $spacing-2xl;
+  }
+
+  .footer-section {
+    margin-bottom: $spacing-2xl;
+
+    h4 {
+      font-size: 1.2rem;
+      font-weight: $font-weight-bold;
+      color: $maroon;
+      margin-bottom: $spacing-md;
+      letter-spacing: -0.5px;
+    }
+
+    // ==========================================================================
+    // Footer Logo
+    // ==========================================================================
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: $spacing-md;
+
+      img {
+        width: 60px;
+        height: 60px;
+        object-fit: contain;
+      }
+
+      h3 {
+        font-size: 1.5rem;
+        font-weight: $font-weight-extrabold;
+        color: $maroon;
+        margin: 0;
+      }
+    }
+
+    // ==========================================================================
+    // Footer Links
+    // ==========================================================================
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        margin-bottom: $spacing-sm;
+
+        a {
+          color: $pitch-black;
+          text-decoration: none;
+          font-size: 0.95rem;
+          transition: color 0.3s ease;
+
+          &:hover {
+            color: $maroon;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+    // ==========================================================================
+    // Social Links
+    // ==========================================================================
+    .social-links {
+      display: flex;
+      gap: $spacing-md;
+
+      .social-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+        height: 45px;
+        background-color: $maroon;
+        color: white;
+        border-radius: 50%;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        font-size: 1.2rem;
+
+        &:hover {
+          background-color: white;
+          color: $maroon;
+          transform: translateY(-5px);
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+      }
+    }
+  }
+
+  // ==========================================================================
+  // Footer Divider
+  // ==========================================================================
+  .footer-divider {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(24, 24, 27, 0.2);
+    margin: $spacing-2xl 0;
+  }
+
+  // ==========================================================================
+  // Footer Bottom
+  // ==========================================================================
+  .footer-bottom {
+    text-align: center;
+
+    p {
+      font-size: 0.9rem;
+      color: $pitch-black;
+      margin: 0;
+      font-weight: $font-weight-medium;
+    }
+  }
+}
+
+// ==========================================================================
+// Responsive Design
+// ==========================================================================
+@media (max-width: 768px) {
+  .about-hero {
+    padding: 80px 0 40px 0;
+
+    .hero-content .hero-title {
+      font-size: 2rem;
+    }
+  }
+
+  .our-story,
+  .our-values,
+  .our-team,
+  .about-cta {
+    padding: 60px 0;
+
+    .section-title {
+      font-size: 2rem;
+    }
+  }
+
+  .our-stats {
+    padding: 60px 0;
+
+    .stat-card {
+      .stat-number {
+        font-size: 2.5rem;
+      }
+
+      .stat-label {
+        font-size: 0.95rem;
+      }
+    }
+  }
+
+  .about-cta {
+    h2 {
+      font-size: 1.8rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+  }
+
+  .footer {
+    padding: $spacing-2xl 0 $spacing-md 0;
+
+    .footer-section {
+      text-align: center;
+
+      .footer-logo {
+        justify-content: center;
+      }
+
+      .social-links {
+        justify-content: center;
+      }
+    }
+
+    .footer-bottom {
+      p {
+        font-size: 0.85rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .footer {
+    padding: $spacing-xl 0 $spacing-md 0;
+
+    .footer-section {
+      .footer-logo {
+        gap: $spacing-sm;
+
+        img {
+          width: 50px;
+          height: 50px;
+        }
+
+        h3 {
+          font-size: 1.2rem;
+        }
+      }
+
+      h4 {
+        font-size: 1rem;
+      }
+
+      .social-link {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+      }
+    }
+  }
+}

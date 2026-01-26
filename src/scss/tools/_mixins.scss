@@ -1,9 +1,10 @@
 // =====================
 // Button Mixins
 // =====================
+@use 'sass:color';
 @use '../settings/colors' as *;
 
-// mixin زر عام قابل للتخصيص
+// Generic customizable button mixin
 @mixin btn($bg-color: $red, $text-color: white, $padding: 12px 35px, $radius: 12px) {
   background-color: $bg-color !important;
   color: $text-color !important;
@@ -18,7 +19,7 @@
   white-space: nowrap;
 
   &:hover {
-    background-color: darken($bg-color, 10%) !important;
+    background-color: color.adjust($bg-color, $lightness: -10%) !important;
     transform: translateY(-2px);
   }
 
@@ -27,7 +28,7 @@
   }
 }
 
-// mixin لأزرار التحكم (الأسهم)
+// Control button mixin (arrows)
 @mixin control-button {
   width: 50px;
   height: 50px;
@@ -49,7 +50,7 @@
   }
 }
 
-// mixin لمؤشرات Carousel
+// Carousel indicators mixin
 @mixin carousel-indicators {
   button {
     width: 12px;

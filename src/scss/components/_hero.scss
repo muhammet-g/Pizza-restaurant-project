@@ -14,7 +14,7 @@
 
 
 
-// Wave animation with delay - موجة مع تأخير 7 ثواني
+// Wave animation with delay
 @keyframes waveWithDelay {
   0% {
     transform: translateY(0) scaleY(1);
@@ -98,9 +98,7 @@
       font-weight: $font-weight-extrabold;
       margin-top: 6rem;
       position: relative;
-      // Animation: الاسم / المدة / الدالة / التأخير / التكرار
       animation: waveWithDelay 9s ease-in-out infinite;
-      // 9s = 7s تأخير + 2s الحركة
 
       &::after {
         content: '';

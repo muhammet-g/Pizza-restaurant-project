@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>صفحة البيتزا</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg  shadow-sm fixed-top py-1">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <div id="pizza-logo">
+                    <img src="assets/images/pizza-logo.png" alt="pizza-logo">
+                </div>
+                <span class="store-title me-3 ms-3 ">ركن البيتزا</span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+                aria-controls="mainNavbar" aria-expanded="false" aria-label="تبديل القائمة">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNavbar">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">الرئيسية</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pizza.html">أنواع البيتزا</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">عن المطعم</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">اتصل بنا</a>
+                    </li>
+                </ul>
+
+                <div class="d-flex ms-lg-4">
+                    <a href="cart.html" class="btn btn-outline-danger position-relative">
+                        سلة الطلبات
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill">
+                            0
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <header class="pizza-page">
+        <div class="container position-relative carousel-container-wrapper">
+            <div id="pizzaCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+
+                <div class="carousel-indicators custom-indicators">
+                    <button type="button" data-bs-target="#pizzaCarousel" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#pizzaCarousel" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#pizzaCarousel" data-bs-slide-to="2"></button>
+                </div>
+
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="main-card-structure">
+                            <div class="img-wrapper">
+                                <div class="img-container">
+                                    <img src="assets/images/vg-1.jpg" alt="بيتزا">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="main-card-structure">
+                            <div class="img-wrapper">
+                                <div class="img-container">
+                                    <img src="assets/images/vg-2.jpg" alt="بيتزا">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="main-card-structure">
+                            <div class="img-wrapper">
+                                <div class="img-container">
+                                    <img src="assets/images/vg-3.jpg" alt="بيتزا">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-12 text-center pizza-page-title">
+                    <h1 class="pizza-name">
+                        بيتزا الخضروات المميزة
+                    </h1>
+                </div>
+                <div class="col-12 text-center pizza-page-title mt-1">
+                    <button class=" btn-order-now " onclick="orderNow()">
+                        <span>أضف إلى السلة</span>
+                        <i class="fas fa-cart-plus"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="pizza-details">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-12">
+                        <h2 class="section-title text-center mb-4">تفاصيل البيتزا</h2>
+                        <p class="pizza-description mx-auto px-md-2">
+                            بيتزا الخضار: بيتزا الخضار شهية وغنية بالفوائد الكثيرة كونها تحتوي على أفضل أنواع الخضراوات
+                            المفيدة للجسم، علاوة على ذلك تتميز بطعمها الشهي ويتفق على حبها كل صغير وكبير من أفراد
+                            العائلة.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="comments">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="section-title text-center mb-5">التعليقات</h2>
+                    </div>
+                </div>
+
+                <!-- Comments Display -->
+                <div class="row mb-5">
+                    <div class="col-12 col-md-8 mx-auto">
+                        <!-- Comment 1 -->
+                        <div class="comment-card p-3 mb-3">
+                            <div class="comment-header d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="comment-author mb-0">سارة محمد</h5>
+                                <small class="comment-date text-muted">منذ 3 أيام</small>
+                            </div>
+                            <div class="comment-rating mb-2">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                            </div>
+                            <p class="comment-text">
+                                "أفضل بيتزا جربتها على الإطلاق! العجينة كانت مقرمشة والصلصة غنية بالنكهات. بالتأكيد
+                                سأعود لطلبها مرة أخرى."
+                            </p>
+                            <div class="comment-actions d-flex gap-3 mt-3">
+                                <button class="comment-like-btn" onclick="toggleLike(this)">
+                                    <i class="far fa-thumbs-up"></i> <span class="like-count">5</span> إعجاب
+                                </button>
+                                <button class="comment-reply-btn" onclick="toggleReplyForm(this)">
+                                    <i class="fas fa-reply"></i> الرد
+                                </button>
+                            </div>
+                            <!-- Reply Form -->
+                            <div class="reply-form mt-3 d-none">
+                                <form class="reply-form-content p-3">
+                                    <input type="text" class="form-control mb-2" placeholder="اسمك" required>
+                                    <textarea class="form-control mb-2" rows="2" placeholder="ردك..."
+                                        required></textarea>
+                                    <button type="submit" class="btn btn-sm btn-danger">إرسال الرد</button>
+                                    <button type="button" class="btn btn-sm btn-secondary ms-2"
+                                        onclick="toggleReplyForm(this)">إلغاء</button>
+                                </form>
+                            </div>
+                        </div>
+
+                        <!-- Comment 2 -->
+                        <div class="comment-card p-3 mb-3">
+                            <div class="comment-header d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="comment-author mb-0">أحمد علي</h5>
+                                <small class="comment-date text-muted">منذ أسبوع</small>
+                            </div>
+                            <div class="comment-rating mb-2">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star-half-alt text-warning"></i>
+                            </div>
+                            <p class="comment-text">
+                                "طعم رائع وجودة عالية جداً! التوصيل كان سريع والعبوة محافظة على جودة البيتزا."
+                            </p>
+                            <div class="comment-actions d-flex gap-3 mt-3">
+                                <button class="comment-like-btn" onclick="toggleLike(this)">
+                                    <i class="far fa-thumbs-up"></i> <span class="like-count">3</span> إعجاب
+                                </button>
+                                <button class="comment-reply-btn" onclick="toggleReplyForm(this)">
+                                    <i class="fas fa-reply"></i> الرد
+                                </button>
+                            </div>
+                            <!-- Reply Form -->
+                            <div class="reply-form mt-3 d-none">
+                                <form class="reply-form-content p-3">
+                                    <input type="text" class="form-control mb-2" placeholder="اسمك" required>
+                                    <textarea class="form-control mb-2" rows="2" placeholder="ردك..."
+                                        required></textarea>
+                                    <button type="submit" class="btn btn-sm btn-danger">إرسال الرد</button>
+                                    <button type="button" class="btn btn-sm btn-secondary ms-2"
+                                        onclick="toggleReplyForm(this)">إلغاء</button>
+                                </form>
+                            </div>
+                        </div>
+
+                        <!-- Comment 3 -->
+                        <div class="comment-card p-3 mb-4">
+                            <div class="comment-header d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="comment-author mb-0">ليلى محمود</h5>
+                                <small class="comment-date text-muted">منذ 10 أيام</small>
+                            </div>
+                            <div class="comment-rating mb-2">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                            </div>
+                            <p class="comment-text">
+                                "عائلتي أحبتها! الخضراوات طازة جداً والنكهة مميزة. أنصح الجميع بتجربة هذه البيتزا."
+                            </p>
+                            <div class="comment-actions d-flex gap-3 mt-3">
+                                <button class="comment-like-btn" onclick="toggleLike(this)">
+                                    <i class="far fa-thumbs-up"></i> <span class="like-count">8</span> إعجاب
+                                </button>
+                                <button class="comment-reply-btn" onclick="toggleReplyForm(this)">
+                                    <i class="fas fa-reply"></i> الرد
+                                </button>
+                            </div>
+                            <!-- Reply Form -->
+                            <div class="reply-form mt-3 d-none">
+                                <form class="reply-form-content p-3">
+                                    <input type="text" class="form-control mb-2" placeholder="اسمك" required>
+                                    <textarea class="form-control mb-2" rows="2" placeholder="ردك..."
+                                        required></textarea>
+                                    <button type="submit" class="btn btn-sm btn-danger">إرسال الرد</button>
+                                    <button type="button" class="btn btn-sm btn-secondary ms-2"
+                                        onclick="toggleReplyForm(this)">إلغاء</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Comment Form -->
+                <div class="row">
+                    <div class="col-12 col-md-8 mx-auto">
+                        <h3 class="mb-4">أضف تعليقك</h3>
+                        <form id="commentForm" class="comment-form">
+                            <div class="mb-3">
+                                <label for="commentName" class="form-label">اسمك</label>
+                                <input type="text" class="form-control" id="commentName" name="name"
+                                    placeholder="أدخل اسمك" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="commentEmail" class="form-label">بريدك الإلكتروني</label>
+                                <input type="email" class="form-control" id="commentEmail" name="email"
+                                    placeholder="your@email.com" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="commentRating" class="form-label">التقييم</label>
+                                <select class="form-select" id="commentRating" name="rating" required>
+                                    <option value="">اختر التقييم</option>
+                                    <option value="5">⭐⭐⭐⭐⭐ ممتاز جداً</option>
+                                    <option value="4">⭐⭐⭐⭐ ممتاز</option>
+                                    <option value="3">⭐⭐⭐ جيد</option>
+                                    <option value="2">⭐⭐ متوسط</option>
+                                    <option value="1">⭐ سيء</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="commentText" class="form-label">التعليق</label>
+                                <textarea class="form-control" id="commentText" name="comment" rows="4"
+                                    placeholder="شارك رأيك معنا..." required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn  w-100">إرسال التعليق</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row footer-content">
+                <div class="col-12 col-md-4 footer-section">
+                    <div class="footer-logo">
+                        <img src="assets/images/pizza-logo.png" alt="pizza-logo">
+                        <h3>ركن البيتزا</h3>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4 footer-section">
+                    <h4>روابط سريعة</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="pizza.html">أنواع البيتزا</a></li>
+                        <li><a href="about.html">عن المطعم</a></li>
+                        <li><a href="contact.html">اتصل بنا</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-12 col-md-4 footer-section">
+                    <h4>تابعنا</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> ركن البيتزا. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/index.js"></script>
+</body>
+
+</html>

@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  entry: './src/js/index.js', // نقطة انطلاق الجافا سكريبت
+  entry: './src/js/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'js/bundle.js',
@@ -37,16 +37,18 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({ template: './src/index.html' }),
+    new HtmlWebpackPlugin({ template: './src/pizza.html', filename: 'pizza.html' }),
+    new HtmlWebpackPlugin({ template: './src/about.html', filename: 'about.html' }),
     new MiniCssExtractPlugin({ filename: 'css/main.css' }),
   ],
   devServer: {
     static: {
-      directory: path.join(__dirname, 'dist'), // المجلد الذي يراقبه السيرفر
+      directory: path.join(__dirname, 'dist'),
     },
-    compress: true, // ضغط الملفات لتسريع النقل
-    port: 9000,     // المنفذ (يمكنك اختيار أي رقم مثل 8080)
-    open: true,     // لفتح المتصفح تلقائياً بمجرد تشغيل الأمر
-    hot: true,      // تفعيل التحديث المباشر دون إعادة تحميل الصفحة بالكامل
-    watchFiles: ['./src/**/*.html'], // مراقبة ملفات HTML لأنها لا تُستدعى عادة بـ Import
+    compress: true,
+    port: 9000,
+    open: true,
+    hot: true,
+    watchFiles: ['./src/**/*.html'],
   },
 };
