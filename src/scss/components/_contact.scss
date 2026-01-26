@@ -1,15 +1,15 @@
-@import '../settings/colors';
-@import '../settings/spacing';
-@import '../settings/typography';
+@use '../settings/colors' as *;
+@use '../settings/spacing' as *;
+@use '../settings/typography' as *;
 
 .hero-contact {
   padding-top: 2rem;
   padding-bottom: 4rem;
   min-height: 100vh;
-  background: linear-gradient(135deg, rgba($color-primary, 0.05) 0%, rgba($color-secondary, 0.05) 100%);
+  background: linear-gradient(135deg, rgba($maroon, 0.05) 0%, rgba($princeton-orange, 0.05) 100%);
 
   h1 {
-    color: $color-primary;
+    color: $maroon;
     font-weight: 800;
     margin-bottom: 1rem;
 
@@ -20,7 +20,7 @@
 
   .lead {
     font-size: 1.2rem;
-    color: $color-text-secondary;
+    color: $pitch-black;
     line-height: 1.8;
   }
 }
@@ -34,7 +34,7 @@
     transition: all 0.3s ease;
     
     &:hover {
-      background-color: rgba($color-primary, 0.05);
+      background-color: rgba($maroon, 0.05);
       transform: translateX(-5px);
     }
 
@@ -42,17 +42,18 @@
       font-size: 1.8rem;
       margin-top: 0.5rem;
       flex-shrink: 0;
+      color: $maroon;
     }
 
     h5 {
-      color: $color-primary;
+      color: $maroon;
       font-weight: 700;
       margin-bottom: 0.5rem;
       font-size: 1rem;
     }
 
     p {
-      color: $color-text-secondary;
+      color: $pitch-black;
       margin: 0;
       font-size: 0.95rem;
       line-height: 1.6;
@@ -73,7 +74,7 @@
 
   .form-label {
     font-weight: 600;
-    color: $color-primary;
+    color: $maroon;
     margin-bottom: 0.7rem;
     font-size: 0.95rem;
   }
@@ -86,9 +87,9 @@
     transition: all 0.3s ease;
 
     &:focus {
-      border-color: $color-primary;
-      box-shadow: 0 0 0 0.2rem rgba($color-primary, 0.15);
-      color: $color-text-primary;
+      border-color: $maroon;
+      box-shadow: 0 0 0 0.2rem rgba($maroon, 0.15);
+      color: $pitch-black;
     }
 
     &::placeholder {
@@ -101,8 +102,8 @@
     font-family: $font-family-base;
 
     &:focus {
-      border-color: $color-primary;
-      box-shadow: 0 0 0 0.2rem rgba($color-primary, 0.15);
+      border-color: $maroon;
+      box-shadow: 0 0 0 0.2rem rgba($maroon, 0.15);
     }
   }
 
@@ -114,7 +115,7 @@
 
     &:hover {
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba($color-primary, 0.3);
+      box-shadow: 0 6px 20px rgba($maroon, 0.3);
     }
 
     &:active {
