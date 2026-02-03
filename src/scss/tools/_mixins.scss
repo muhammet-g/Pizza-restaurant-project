@@ -4,6 +4,42 @@
 @use 'sass:color';
 @use '../settings/colors' as *;
 
+// =====================
+// Hero / section theming
+// =====================
+@mixin pizza-hero-theme($bg, $accent, $text: $pitch-black, $card: null) {
+  background: linear-gradient(135deg, color.mix($bg, white, 85%), $bg);
+  color: $text;
+
+  // Card / slider surface
+  .main-card-structure {
+    background-color: if($card == null, color.mix($accent, $bg, 25%), $card);
+  }
+
+  // Title + CTA
+  .pizza-name { color: $accent; }
+  .btn-order-now { @include btn($bg-color: $accent, $text-color: white, $radius: 30px); }
+
+  // Carousel controls + indicators
+  .carousel-control-prev,
+  .carousel-control-next {
+    background-color: color.mix($accent, $text, 75%);
+
+    &:hover {
+      background-color: $accent;
+    }
+  }
+
+  .custom-indicators {
+    button {
+      background-color: color.mix($text, $accent, 45%);
+
+      &.active {
+        background-color: $accent;
+      }
+    }
+  }
+}
 // Generic customizable button mixin
 @mixin btn($bg-color: $red, $text-color: white, $padding: 12px 35px, $radius: 12px) {
   background-color: $bg-color !important;
@@ -68,5 +104,53 @@
     &.active {
       background-color: $amber-gold;
     }
+  }
+}
+
+// =====================
+// Dynamic Theme Triggers
+// =====================
+// Apply pizza-hero-theme to pages when body has specific theme class
+body.theme-veggie {
+  .pizza-page {
+    @include pizza-hero-theme(
+      $bg: color.mix($vanilla-custard, white, 90%),
+      $accent: #27ae60,
+      $text: $pitch-black,
+      $card: color.mix(#27ae60, $vanilla-custard, 15%)
+    );
+  }
+}
+
+body.theme-cheese {
+  .pizza-page {
+    @include pizza-hero-theme(
+      $bg: color.mix($amber-gold, white, 75%),
+      $accent: $princeton-orange,
+      $text: $pitch-black,
+      $card: color.mix($princeton-orange, $amber-gold, 20%)
+    );
+  }
+}
+
+body.theme-meat {
+  .pizza-page {
+    @include pizza-hero-theme(
+      $bg: color.mix($pitch-black, $maroon, 80%),
+      $accent: $maroon,
+      $text: white,
+      $card: color.mix($maroon, $amber-glow, 10%)
+    );
+  }
+}
+
+body.theme-margarita {
+  .pizza-page {
+    @include pizza-hero-theme(
+      $bg: color.mix(#ffcccc, white, 80%),
+      $accent: #dc3545,
+      $text: $pitch-black,
+      $card: color.mix(#dc3545, #ffcccc, 20%)
+    );
   }
 }

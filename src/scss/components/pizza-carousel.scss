@@ -1,19 +1,92 @@
 // Import required settings
+@use 'sass:color';
 @use '../settings/colors' as *;
 @use '../settings/typography' as *;
 @use '../settings/spacing' as *;
 @use '../tools/mixins' as *;
 
+// =====================
+// State Toggle Classes
+// =====================
+.hidden {
+  display: none !important;
+}
+
+.visible {
+  display: block !important;
+}
+
+// =====================
+// Pizza Grid View
+// =====================
+.pizza-grid-section {
+  padding: 120px 0 80px 0;
+  background-color: $vanilla-custard;
+  min-height: 100vh;
+
+  .pizza-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .pizza-grid-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+
+    img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    h3 {
+      padding: 20px 20px 10px 20px;
+      color: $pitch-black;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    p {
+      padding: 0 20px 20px 20px;
+      color: #666;
+      margin: 0;
+      flex-grow: 1;
+    }
+
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+      background: linear-gradient(135deg, #fffbf0 0%, white 100%);
+    }
+
+    &:active {
+      transform: translateY(-5px);
+    }
+  }
+}
+
+// =====================
+// Pizza Detail View
+// =====================
+
 .pizza-page {
   padding: 100px 0 100px 0;
-  background-color: $vanilla-custard;
+  @include pizza-hero-theme($bg: $vanilla-custard, $accent: $maroon, $text: $pitch-black);
 
   .carousel-container-wrapper {
     max-width: 700px;
   }
 
   .main-card-structure {
-    background-color:$amber-gold;
     border-radius: 40px;
     margin: 10px;
     display: flex;
@@ -48,8 +121,6 @@
       width: 12px;
       height: 12px;
       border-radius: 50%;
-      background-color: #555;
-      &.active { background-color: #ffc107; }
     }
   }
 
@@ -58,14 +129,12 @@
   .carousel-control-next {
     width: 50px;
     height: 50px;
-    background-color: rgba($maroon, 0.8);
     border-radius: 50%;
     top: 50%;
     transform: translateY(-50%);
     transition: all 0.3s ease;
 
     &:hover {
-      background-color: $maroon;
       transform: translateY(-50%) scale(1.1);
     }
 
@@ -109,6 +178,34 @@
       display: none;
     }
 }
+
+// Variants per pizza type (apply the class on the header.pizza-page)
+.pizza-page.is-veg {
+  @include pizza-hero-theme(
+    $bg: $vanilla-custard,
+    $accent: $maroon,
+    $text: $pitch-black,
+    $card: color.mix($amber-gold, $maroon, 20%)
+  );
+}
+
+.pizza-page.is-cheese {
+  @include pizza-hero-theme(
+    $bg: color.mix($amber-gold, white, 70%),
+    $accent: $princeton-orange,
+    $text: $pitch-black,
+    $card: color.mix($amber-gold, $princeton-orange, 30%)
+  );
+}
+
+.pizza-page.is-meat {
+  @include pizza-hero-theme(
+    $bg: color.mix($pitch-black, $maroon, 85%),
+    $accent: $maroon,
+    $text: white,
+    $card: color.mix($maroon, $amber-gold, 15%)
+  );
+}
   // Responsive - Mobile
   @media (max-width: 576px) {
     .carousel-control-prev,
@@ -135,7 +232,6 @@
 }
 
 .btn-order-now {
-  @include btn($bg-color: $maroon, $text-color: white, $padding: 10px 25px, $radius: 30px);
   font-size: 1.1rem;
   margin: 20px auto 30px auto;
   text-align: center;
@@ -161,3 +257,8 @@ section.pizza-details {
         text-align: center;
     }
 }
+
+// ==========================================================================
+// Mixin for pizza page hero theme
+// ==========================================================================
+

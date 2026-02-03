@@ -4,6 +4,9 @@ import '../scss/main.scss';
 // Import common libraries
 import './common.js';
 
+// Import SPA logic
+import './spa.js';
+
 // Import module functions
 import { initializeFooter } from './footer.js';
 import { initializeCart } from './cart.js';
