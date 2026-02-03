@@ -134,3 +134,30 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .hero-section {
+    .overly {
+      .hello {
+        font-size: 2.5rem;
+        margin-top:6rem;
+
+        &::after {
+          width: 80%;
+          bottom: -16px;
+        }
+      }
+
+      .discover-us {
+        font-size: 1.5rem;
+        padding-top: $spacing-xl;
+      }
+
+      .angles-down-custom {
+        font-size: 50px;
+        margin-top: 1.5rem;
+      }
+    }
+  }
+  
+}
