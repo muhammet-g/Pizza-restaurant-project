@@ -75,8 +75,13 @@ section.menu-section {
       color: #18181b;
       margin: 0 0 $spacing-sm;
       letter-spacing: -0.5px;
+      a {
+        text-decoration: none !important;
+      }
     }
-
+a {
+        text-decoration: none !important;
+      }
     // ==========================================================================
     // Description
     // ==========================================================================
