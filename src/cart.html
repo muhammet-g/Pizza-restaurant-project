@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>سلة الطلبات - ركن البيتزا</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg shadow-sm fixed-top py-1">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <div id="pizza-logo">
+                        <img src="assets/images/pizza-logo.png" alt="pizza-logo">
+                    </div>
+                    <span class="store-title me-3 ms-3">ركن البيتزا</span>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+                    aria-controls="mainNavbar" aria-expanded="false" aria-label="تبديل القائمة">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="mainNavbar">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">الرئيسية</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="pizza.html">أنواع البيتزا</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">عن المطعم</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">اتصل بنا</a>
+                        </li>
+                    </ul>
+
+                    <div class="d-flex ms-lg-4 me-5">
+                        <a href="cart.html" class="btn btn-outline-danger position-relative active">
+                            سلة الطلبات
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill"
+                                id="cart-badge">
+                                0
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="cart-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="page-title text-center mt-5 mb-4">سلة الطلبات</h1>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Cart Items Section -->
+                <div class="col-12 col-lg-7 mb-4">
+                    <div class="cart-items-container">
+                        <div id="empty-cart-message" class="empty-cart text-center py-5">
+                            <i class="fas fa-shopping-cart fa-5x mb-3"></i>
+                            <h3>سلة الطلبات فارغة</h3>
+                            <p>لم تقم بإضافة أي منتجات بعد</p>
+                            <a href="index.html" class="btn btn-primary mt-3">
+                                <i class="fas fa-arrow-left ms-2"></i>
+                                العودة للقائمة
+                            </a>
+                        </div>
+
+                        <div id="cart-items-list" style="display: none;">
+                            <!-- Cart items will be dynamically inserted here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cart Summary & Checkout Section -->
+                <div class="col-12 col-lg-5">
+                    <div class="cart-summary-container">
+                        <!-- Order Summary -->
+                        <div class="cart-summary">
+                            <h3 class="summary-title">ملخص الطلب</h3>
+                            <div class="summary-details">
+                                <div class="summary-row">
+                                    <span>المجموع الفرعي:</span>
+                                    <span id="subtotal">﷼ 0</span>
+                                </div>
+                                <div class="summary-row">
+                                    <span>رسوم التوصيل:</span>
+                                    <span id="delivery-fee">﷼ 15</span>
+                                </div>
+                                <div class="summary-divider"></div>
+                                <div class="summary-row total-row">
+                                    <span>الإجمالي:</span>
+                                    <span id="total">﷼ 0</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Checkout Form -->
+                        <div class="checkout-form" id="checkout-form" style="display: none;">
+                            <h3 class="checkout-title">إتمام الطلب</h3>
+
+                            <form id="payment-form" novalidate>
+                                <div class="form-group mb-3">
+                                    <label for="cardholder-name" class="form-label">
+                                        <i class="fas fa-user ms-2"></i>
+                                        اسم صاحب البطاقة
+                                    </label>
+                                    <input type="text" class="form-control" id="cardholder-name"
+                                        placeholder="أدخل الاسم كما هو في البطاقة" required>
+                                    <div class="invalid-feedback">يرجى إدخال اسم صاحب البطاقة</div>
+                                </div>
+
+                                <div class="form-group mb-3">
+                                    <label for="card-number" class="form-label">
+                                        <i class="fas fa-credit-card ms-2"></i>
+                                        رقم البطاقة
+                                    </label>
+                                    <input type="text" class="form-control" id="card-number"
+                                        placeholder="0000 0000 0000 0000" maxlength="19" required>
+                                    <div class="invalid-feedback">يرجى إدخال رقم بطاقة صحيح</div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="form-group mb-3">
+                                            <label for="expiry-date" class="form-label">
+                                                <i class="fas fa-calendar ms-2"></i>
+                                                تاريخ الانتهاء
+                                            </label>
+                                            <input type="text" class="form-control" id="expiry-date" placeholder="MM/YY"
+                                                maxlength="5" required>
+                                            <div class="invalid-feedback">تاريخ غير صحيح</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group mb-3">
+                                            <label for="cvv" class="form-label">
+                                                <i class="fas fa-lock ms-2"></i>
+                                                CVV
+                                            </label>
+                                            <input type="text" class="form-control" id="cvv" placeholder="123"
+                                                maxlength="3" required>
+                                            <div class="invalid-feedback">CVV غير صحيح</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group mb-3">
+                                    <label for="delivery-address" class="form-label">
+                                        <i class="fas fa-map-marker-alt ms-2"></i>
+                                        عنوان التوصيل
+                                    </label>
+                                    <textarea class="form-control" id="delivery-address" rows="2"
+                                        placeholder="أدخل عنوان التوصيل الكامل" required></textarea>
+                                    <div class="invalid-feedback">يرجى إدخال عنوان التوصيل</div>
+                                </div>
+
+                                <div class="security-notice mb-3">
+                                    <i class="fas fa-shield-alt ms-2"></i>
+                                    <small>جميع معلومات الدفع مشفرة وآمنة</small>
+                                </div>
+
+                                <button type="submit" class="btn btn-payment w-100">
+                                    <i class="fas fa-check-circle ms-2"></i>
+                                    تأكيد الدفع
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row footer-content">
+                <div class="col-12 col-md-4 footer-section">
+                    <div class="footer-logo">
+                        <img src="assets/images/pizza-logo.png" alt="pizza-logo">
+                        <h3>ركن البيتزا</h3>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4 footer-section">
+                    <h4>روابط سريعة</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="pizza.html">أنواع البيتزا</a></li>
+                        <li><a href="about.html">عن المطعم</a></li>
+                        <li><a href="contact.html">اتصل بنا</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-12 col-md-4 footer-section">
+                    <h4>تابعنا</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> ركن البيتزا. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/index.js"></script>
+</body>
+
+</html>
