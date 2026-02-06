@@ -12,20 +12,45 @@
 // ==========================================================================
 section.menu-section {
   background-color: $amber-gold;
-  padding: $spacing-3xl 0;
+  padding: $spacing-3xl $spacing-lg;
+
+  // Responsive padding
+  @media (max-width: 1200px) {
+    padding: $spacing-2xl $spacing-md;
+  }
+
+  @media (max-width: 768px) {
+    padding: $spacing-xl $spacing-sm;
+  }
+
+  @media (max-width: 480px) {
+    padding: $spacing-lg $spacing-xs;
+  }
+
+  .container {
+    .row {
+      justify-content: center;
+      gap: 20px;
+
+      @media (max-width: 768px) {
+        gap: 15px;
+      }
+    }
+  }
 }
 
 // ==========================================================================
 // Card Main Container
 // ==========================================================================
 .card {
-  width: 360px;
+  width: 100%;
+  max-width: 360px;
   background: #fff !important;
   border-radius: 15px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
   transition: 0.3s;
   font-family: $font-family-base;
-  margin: $spacing-xl auto;
+  margin: $spacing-md auto;
   overflow: hidden;
   position: relative;
   cursor: pointer !important;
@@ -44,13 +69,13 @@ section.menu-section {
   // ==========================================================================
   .tilt {
     overflow: hidden;
+    padding: 10px 10px 0 10px;
   }
 
   .img {
     height: 200px;
     overflow: hidden;
     border-radius: 10px;
-    margin-top: 10px;
 
     img {
       width: 100%;
@@ -239,35 +264,137 @@ a {
 // ==========================================================================
 // Responsive Design
 // ==========================================================================
-@media (max-width: 400px) {
-  .card {
-    width: 90%;
 
-    .title {
-      font-size: 16px;
+// Large screens - maintain card design
+@media (min-width: 1200px) {
+  .card {
+    max-width: 380px;
+  }
+}
+
+// Medium screens - tablets landscape
+@media (max-width: 1024px) {
+  .card {
+    max-width: 340px;
+    margin: $spacing-sm auto;
+
+    .info {
+      padding: $spacing-md;
     }
+  }
+}
+
+// Tablets portrait
+@media (max-width: 768px) {
+  .card {
+    max-width: 320px;
 
     .img {
       height: 180px;
     }
 
-    .bottom {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: $spacing-lg;
-
-      .price {
-        margin-bottom: $spacing-sm;
+    .info {
+      .title {
+        font-size: 17px;
       }
 
-      .btn {
-        width: 100%;
-        justify-content: center;
-        gap: 8px;
+      .desc {
+        font-size: 12px;
+      }
+    }
+  }
+}
 
-        i {
-          margin-left: 8px;
+// Mobile landscape
+@media (max-width: 600px) {
+  .card {
+    max-width: 100%;
+    margin: $spacing-sm 0;
+
+    .img {
+      height: 200px;
+    }
+
+    .info {
+      .bottom {
+        flex-direction: row;
+        justify-content: space-between;
+
+        .btn {
+          width: auto;
+          padding: 8px 15px;
+          font-size: 12px;
         }
+      }
+    }
+  }
+}
+
+// Mobile portrait - small
+@media (max-width: 480px) {
+  .card {
+    .info {
+      padding: $spacing-sm;
+
+      .title {
+        font-size: 16px;
+      }
+
+      .desc {
+        font-size: 11px;
+      }
+
+      .bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: $spacing-md;
+
+        .price {
+          margin-bottom: 0;
+        }
+
+        .btn {
+          width: 100%;
+          justify-content: center;
+          padding: 10px 20px;
+          font-size: 13px;
+
+          i {
+            margin-left: 8px;
+          }
+        }
+      }
+
+      .meta {
+        .rating {
+          flex-wrap: wrap;
+          gap: $spacing-xs;
+
+          .rcount {
+            font-size: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Extra small mobile
+@media (max-width: 360px) {
+  .card {
+    .img {
+      height: 160px;
+    }
+
+    .info {
+      .title {
+        font-size: 15px;
+      }
+
+      .meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: $spacing-sm;
       }
     }
   }
