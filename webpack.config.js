@@ -19,7 +19,7 @@ module.exports = (env, argv) => {
       chunkFilename: isProduction ? 'js/[name].[contenthash:8].chunk.js' : 'js/[name].chunk.js',
       assetModuleFilename: 'assets/[name].[hash:8][ext]',
       clean: true, // Clean dist folder before each build
-      publicPath: '/',
+      publicPath: './', // Use relative paths for GitHub Pages
     },
     devtool: isProduction ? 'source-map' : 'eval-source-map',
     module: {
