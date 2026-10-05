@@ -1,0 +1,85 @@
+@use '../settings/colors' as *;
+
+// Shared identity across the menu, product, cart and information pages.
+:root {
+  --brand-ink: #272820;
+  --brand-paper: #faf6ed;
+  --brand-accent: #b93825;
+  --brand-muted: #676457;
+  --brand-border: #e4d9c9;
+  --bs-body-font-family: 'Tajawal', sans-serif;
+  --bs-body-color: var(--brand-ink);
+  --bs-body-bg: var(--brand-paper);
+}
+body { background: var(--brand-paper); color: var(--brand-ink); line-height: 1.7; }
+:focus-visible { outline: 3px solid #596239; outline-offset: 4px; }
+html { scroll-padding-top: 100px; }
+.navbar {
+  background: #fffdf7;
+  border-bottom: 1px solid var(--brand-border);
+  min-height: 80px;
+  box-shadow: none !important;
+  .navbar-brand {
+    #pizza-logo { width: 48px; flex: none; img { margin: 0; object-fit: contain; } }
+    .store-title { font-size: 1.25rem; flex: none; color: var(--brand-ink); }
+  }
+  .navbar-nav { gap: 16px; .nav-link { font-weight: 700; font-size: .9375rem; } }
+  .btn-outline-danger { border-radius: 8px; padding: 10px 20px; font-weight: 700; }
+  .btn-outline-danger:hover { transform: none; }
+  .navbar-collapse > .d-flex { margin: 0 24px !important; }
+}
+.section-title { color: var(--brand-ink); font-size: 2.25rem; font-weight: 800; }
+section.menu-section {
+  background: #fffdf7;
+  padding: 64px 0 !important;
+  .container .row { gap: 0; }
+  .card { max-width: none; height: calc(100% - 32px); margin: 16px 0; border: 1px solid var(--brand-border); box-shadow: none; border-radius: 12px; cursor: default !important; }
+  .card:hover { box-shadow: 0 8px 24px #2728200c; transform: translateY(-4px); }
+  .card .tilt { padding: 0; }
+  .card .img { height: 240px; border-radius: 0; }
+  .card .info { padding: 24px; }
+  .card .info .title { font-size: 1.5rem; }
+  .card .info .desc { font-size: .9375rem; line-height: 1.8; min-height: 80px; color: var(--brand-muted); }
+  .card .info .bottom .btn { box-shadow: none; border-radius: 8px; font-size: .875rem; padding: 12px 16px; }
+  .card .info .meta .rating { flex-wrap: wrap; }
+  .card .info .meta .rating .stars i { color: #9a641b; }
+  .card .info .meta .rating .rcount { font-size: .8125rem; }
+}
+.offer-section {
+  background: #f1e5d4; padding: 64px 0;
+  .new-card { box-shadow: none; border-radius: 12px; }
+  .card-front { background: #fffdf7; border: 1px solid var(--brand-border); color: var(--brand-ink); }
+}
+.pizza-grid-section {
+  .pizza-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .pizza-grid-card { border: 1px solid var(--brand-border); box-shadow: none; border-radius: 12px; }
+  .pizza-grid-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px #2728200c; background: white; }
+}
+.cart-page, .about-hero, .hero-contact { background: var(--brand-paper); }
+.cart-items-container, .cart-summary, .checkout-form-container { border: 1px solid var(--brand-border); box-shadow: none; border-radius: 12px; }
+.btn-payment, .btn-primary { background: $maroon; border-color: $maroon; }
+.footer {
+  background: #272820; color: #f1e5d4; padding: 56px 0 24px;
+  .footer-section h4, .footer-section .footer-logo h3 { color: #faf6ed; }
+  .footer-section .footer-links li a { color: #f1e5d4; }
+  .footer-section .social-links .social-link { background: #faf6ed; color: $maroon; }
+  .footer-bottom p { color: #f1e5d4; }
+  .footer-divider { background: #f1e5d433; }
+}
+@media (max-width: 991px) {
+  .navbar .navbar-collapse { padding: 16px 0; }
+  .navbar .navbar-collapse > .d-flex { margin: 16px 0 0 !important; }
+  .navbar .navbar-nav { gap: 8px; }
+  .pizza-grid-section .pizza-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 575px) {
+  .navbar .navbar-brand .store-title { font-size: 1.125rem; }
+  section.menu-section { padding: 48px 0 !important; }
+  section.menu-section .card .info .desc { min-height: 0; }
+  section.menu-section .card .info .bottom { flex-direction: row; align-items: center; gap: 8px; }
+  .pizza-grid-section .pizza-grid { grid-template-columns: minmax(0, 1fr); }
+  .section-title { font-size: 1.875rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
