@@ -62,21 +62,21 @@
         <div class="container">
             <h2 class="section-title text-center mb-5">اختر نوع البيتزا</h2>
             <div class="pizza-grid">
-                <div class="pizza-grid-card" data-pizza-type="veggie">
+                <a class="pizza-grid-card" data-pizza-type="veggie" data-price="9" href="pizza.html?type=veggie">
                     <img src="assets/images/vg-1.jpg" alt="بيتزا خضروات">
-                    <h3>بيتزا الخضروات</h3>
+                    <h3>بيتزا الخضار</h3>
                     <p>مزيج صحي من الخضار الطازة</p>
-                </div>
-                <div class="pizza-grid-card" data-pizza-type="margarita">
+                </a>
+                <a class="pizza-grid-card" data-pizza-type="margarita" data-price="12" href="pizza.html?type=margarita">
                     <img src="assets/images/mg-2.jpg" alt="بيتزا مارجريت">
                     <h3>بيتزا مارجريت</h3>
                     <p>بيتزا طازة بصلصة الطماطم والجبن</p>
-                </div>
-                <div class="pizza-grid-card" data-pizza-type="chicken">
+                </a>
+                <a class="pizza-grid-card" data-pizza-type="chicken" data-price="19" href="pizza.html?type=chicken">
                     <img src="assets/images/ch-2.jpg" alt="بيتزا دجاج">
                     <h3>بيتزا الدجاج</h3>
                     <p>دجاج مشوي طري وشهي</p>
-                </div>
+                </a>
             </div>
 
             <!-- Public comments always visible in grid view -->
@@ -306,7 +306,7 @@
                     </h1>
                 </div>
                 <div class="col-12 text-center pizza-page-title mt-1">
-                    <button class=" btn-order-now " onclick="orderNow()">
+                    <button class="btn-order-now" type="button">
                         <span>أضف إلى السلة</span>
                         <i class="fas fa-cart-plus"></i>
                     </button>

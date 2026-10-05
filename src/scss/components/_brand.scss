@@ -66,9 +66,9 @@ section.menu-section {
   .footer-bottom p { color: #f1e5d4; }
   .footer-divider { background: #f1e5d433; }
 }
-@media (max-width: 991px) {
+@media (max-width: 991.98px) {
   .navbar .navbar-collapse { padding: 16px 0; }
-  .navbar .navbar-collapse > .d-flex { margin: 16px 0 0 !important; }
+  .navbar .navbar-collapse > .d-flex { margin: 16px 0 0 !important; justify-content: center; }
   .navbar .navbar-nav { gap: 8px; }
   .pizza-grid-section .pizza-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }

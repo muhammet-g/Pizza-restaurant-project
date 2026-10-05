@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "test": "node --test tests/*.test.cjs",
     "start": "webpack serve --mode development",
     "dev": "webpack serve --mode development --open",
     "build": "webpack --mode production",

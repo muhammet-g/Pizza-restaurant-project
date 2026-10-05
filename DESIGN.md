@@ -20,3 +20,9 @@ The restaurant keeps its Arabic name, existing logo, menu prices, routes and car
 - Existing Sass deprecation and asset-size build warnings remain; there are no new runtime console errors in the tested flow.
 
 No new dependencies or changes to payment handling are included.
+
+## Ordering and mobile navigation repair
+
+The detail page order button now uses the existing cart storage and quantity handling, reading the selected pizza's title, price and built image URL from its menu card. Pizza selection cards are native links that also support keyboard navigation. The cart button is centered inside collapsed navigation below Bootstrap's 992-pixel breakpoint, including fractional viewport widths.
+
+`npm test` checks ordering all three pizza types, repeated orders and invalid types. Browser verification covers card navigation, the detail button, cart contents and mobile menu alignment.

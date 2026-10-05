@@ -8,7 +8,6 @@ function initializePizzaSPA() {
     const gridView = document.getElementById('pizzaGridView');
     const detailView = document.getElementById('pizzaDetailView');
     const detailMain = document.getElementById('pizzaDetailsMain');
-    const gridCards = document.querySelectorAll('.pizza-grid-card');
     const commentsDetailSection = document.getElementById('pizzaCommentsDetail');
 
     // On page load: show grid if no type param, show detail if type param exists
@@ -39,14 +38,6 @@ function initializePizzaSPA() {
             }
         }
     }
-
-    // Grid cards: clicking navigates to detail view
-    gridCards.forEach(card => {
-        card.addEventListener('click', function () {
-            const pizzaType = this.getAttribute('data-pizza-type');
-            window.location.href = `pizza.html?type=${pizzaType}`;
-        });
-    });
 
 }
 

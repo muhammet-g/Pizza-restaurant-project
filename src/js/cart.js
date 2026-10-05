@@ -340,10 +340,45 @@ function initializePaymentForm() {
 // Initialize Cart System
 // =====================================================
 
+function showAddedToCart(title) {
+    window.Swal.fire({
+        icon: 'success',
+        title: 'تمت الإضافة!',
+        text: `تم إضافة ${title} إلى سلة الطلبات`,
+        confirmButtonText: 'موافق',
+        confirmButtonColor: '#b93825',
+        timer: 2000,
+        timerProgressBar: true,
+        showConfirmButton: true
+    });
+}
+
+function initializeDetailOrderButton() {
+    const button = document.querySelector('.btn-order-now');
+    if (!button) return;
+
+    const type = new URLSearchParams(window.location.search).get('type');
+    const card = Array.from(document.querySelectorAll('.pizza-grid-card'))
+        .find(card => card.dataset.pizzaType === type);
+    const price = Number(card?.dataset.price);
+    if (!card || !Number.isFinite(price) || price <= 0) {
+        button.disabled = true;
+        return;
+    }
+
+    const title = card.querySelector('h3').textContent.trim();
+    const image = card.querySelector('img').src;
+    button.addEventListener('click', () => {
+        addToCart({ title, price, image });
+        showAddedToCart(title);
+    });
+}
+
 export function initializeCart() {
     document.addEventListener('DOMContentLoaded', function () {
         // Update badge count on all pages
         updateCartBadge();
+        initializeDetailOrderButton();
 
         // Initialize cart page if we're on it
         if (document.getElementById('cart-items-list')) {
@@ -370,16 +405,7 @@ export function initializeCart() {
                     image: imageUrl
                 });
 
-                window.Swal.fire({
-                    icon: 'success',
-                    title: 'تمت الإضافة!',
-                    text: `تم إضافة ${cardTitle} إلى سلة الطلبات`,
-                    confirmButtonText: 'موافق',
-                    confirmButtonColor: '#dc3545',
-                    timer: 2000,
-                    timerProgressBar: true,
-                    showConfirmButton: true
-                });
+                showAddedToCart(cardTitle);
             });
         });
 
